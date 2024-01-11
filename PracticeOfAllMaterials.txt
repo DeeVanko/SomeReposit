@@ -69,12 +69,16 @@ Exercise 2:
 		|MovieID: 5, Title: 'Forrest Gump', Director: 'Robert Zemeckis', Genre: 'Drama', ReleaseYear: 1994, Rating: 8.8
     |MovieID: 6, Title: 'The Matrix', Director: 'Lana Wachowski, Lilly Wachowski', Genre: 'Science Fiction', ReleaseYear: 1999, Rating: 8.7
   4) Update the Rating of the 'Inception' to 9.0 in the P1E2_Movies table
+  5) Retrieve all movies with a Rating greater than or equal to 9.0, ordered by ReleaseYear in descending order.
+  6) Delete the movie with MovieID 4 from the P1E2_Movies table.
+  7) Retrieve the average rating of all movies in the 'Drama' genre.
+  8) Remove all rows from the P1E2_Movies table
+  9) Delete the P1E2_Movies table
 
-  5) Update the price of the 'Laptop' to 999.99 in the Products table
-  6) Retrieve all products in the 'Electronics' category from the Products table.
-  7) Delete the product with the price < 20from the Products table
-  8) Remove all rows from the Products table
-  9) Delete Products table
+● Delete all rows from the Movies table.
+● Delete the Movies table.
+
+
 
 Result of Exercise 2:
   1)  |Create table P1E2_Movies(
@@ -99,6 +103,7 @@ Result of Exercise 2:
   4)  |Update P1E2_Movies
       |set Rating = 9.0
       |where Title = 'Inception';
+
 
 ================================================================================
 --------------------------------------------------------------------------------
