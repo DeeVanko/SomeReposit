@@ -31,7 +31,7 @@ Result of Exercise 1:
 
   2)  |Alter table P1E1_Products add Country Varchar2(50);
 
-  3)  |INSERT INTO P1E1_Products(ProductId, ProductName, Category, Price, Country) VALUES (1, 'Laptop', 'Electronics', 899.99, 'USA'),
+  3)  |INSERT INTO P1E1_Products(ProductId, ProductName, Category, Price, Country) VALUES (1, 'Laptop', 'Electronics', 899.99, 'USA');
 
   4)  |INSERT ALL
       |INTO P1E1_Products(ProductId, ProductName, Category, Price, Country) VALUES (2, 'Book', 'Books', 19.99, 'USA')
