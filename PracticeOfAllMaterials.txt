@@ -75,10 +75,6 @@ Exercise 2:
   8) Remove all rows from the P1E2_Movies table
   9) Delete the P1E2_Movies table
 
-● Delete all rows from the Movies table.
-● Delete the Movies table.
-
-
 
 Result of Exercise 2:
   1)  |Create table P1E2_Movies(
@@ -103,6 +99,20 @@ Result of Exercise 2:
   4)  |Update P1E2_Movies
       |set Rating = 9.0
       |where Title = 'Inception';
+
+  5)  |Select * from P1E2_Movies
+      |where Rating >= 9.0 
+	    |order by ReleaseYear DESC;
+
+  6)  |Delete from P1E2_Movies where MovieID = 4;
+
+	7)  |SELECT AVG(rating) AS average_rating
+      |FROM P1E2_Movies
+	    |WHERE genre = 'Drama';
+
+  8)  |Truncate table P1E2_Movies;
+
+  9)  |Drop table P1E2_Movies;
 
 
 ================================================================================
