@@ -1,0 +1,50 @@
+================================================================================
+------------------------------DDL & DML-----------------------------------------
+================================================================================
+Exercise 1:
+  1) Create a table called Products with the following columns:
+    |ProductID (integer, primary key)
+    |ProductName (varchar)
+    |Category (varchar)
+    |Price (varchar)
+  2) Add a new column Country (varchar) to the Products table
+  3) Insert one product into the Products table:
+    |ProductID: 1, ProductName: 'Laptop', Category: 'Electronics', Price: 899.99, Country: 'USA'
+  4) Insert four more products into the Products table:
+    |ProductID: 2, ProductName: 'Book', Category: 'Books', Price: 19.99, Country: 'USA' 
+    |ProductID: 3, ProductName: 'T-shirt', Category: 'Apparel', Price: 14.99, Country: 'Turkey' 
+    |ProductID: 4, ProductName: TV, Category: Electronics, Price: 699.99, Country: 'Japan' ProductID: 5, 
+    |ProductName: 'Dress', Category: 'Apparel', Price:99.99, Country: 'China'
+  5) Update the price of the 'Laptop' to 999.99 in the Products table
+  6) Retrieve all products in the 'Electronics' category from the Products table.
+  7) Delete the product with the price < 20from the Products table
+  8) Remove all rows from the Products table
+  9) Delete Products table
+
+
+Create table P1E1_Products(
+	ProductId int Primary key,
+	ProductName Varchar2(50),
+	Category Varchar2(50),
+	Price Varchar2(50)
+);
+
+Alter table P1E1_Products add Country Varchar2(50);
+
+INSERT INTO P1E1_Products(ProductId, ProductName, Category, Price, Country) VALUES (1, 'Laptop', 'Electronics', 899.99, 'USA'),
+
+INSERT ALL
+INTO P1E1_Products(ProductId, ProductName, Category, Price, Country) VALUES (2, 'Book', 'Books', 19.99, 'USA')
+INTO P1E1_Products(ProductId, ProductName, Category, Price, Country) VALUES (3, 'T-shirt', 'Apparel', 14.99, 'Turkey')
+INTO P1E1_Products(ProductId, ProductName, Category, Price, Country) VALUES (4, 'TV', 'Electronics', 699.99, 'Japan')
+INTO P1E1_Products(ProductId, ProductName, Category, Price, Country) VALUES (5, 'Dress', 'Apparel', 99.99, 'China')
+Select * from P1E1_Products;
+
+Update P1E1_Products 
+set Price = 999.99
+where ProductName = 'Laptop';
+
+Select * from P1E1_Products where Category = 'Electronics';
+================================================================================
+--------------------------------------------------------------------------------
+================================================================================
