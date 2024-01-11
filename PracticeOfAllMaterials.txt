@@ -102,18 +102,41 @@ Result of Exercise 2:
 
   5)  |Select * from P1E2_Movies
       |where Rating >= 9.0 
-	    |order by ReleaseYear DESC;
+      |order by ReleaseYear DESC;
 
   6)  |Delete from P1E2_Movies where MovieID = 4;
 
-	7)  |SELECT AVG(rating) AS average_rating
+  7)  |SELECT AVG(rating) AS average_rating
       |FROM P1E2_Movies
-	    |WHERE genre = 'Drama';
+      |WHERE genre = 'Drama';
 
   8)  |Truncate table P1E2_Movies;
 
   9)  |Drop table P1E2_Movies;
 
+
+================================================================================
+--------------------------------------------------------------------------------
+================================================================================
+Exercise 1:
+  1) Create a table called P1E1_Products with the following columns:
+    |ProductID (integer, primary key)
+    |ProductName (varchar2)
+    |Category (varchar2)
+    |Price (varchar2)
+  2) Add a new column Country (varchar2) to the P1E1_Products table
+  3) Insert one product into the P1E1_Products table:
+    |ProductID: 1, ProductName: 'Laptop', Category: 'Electronics', Price: 899.99, Country: 'USA'
+  4) Insert four more products into the P1E1_Products table:
+    |ProductID: 2, ProductName: 'Book', Category: 'Books', Price: 19.99, Country: 'USA' 
+    |ProductID: 3, ProductName: 'T-shirt', Category: 'Apparel', Price: 14.99, Country: 'Turkey' 
+    |ProductID: 4, ProductName: TV, Category: Electronics, Price: 699.99, Country: 'Japan' 
+    |ProductID: 5, ProductName: 'Dress', Category: 'Apparel', Price:99.99, Country: 'China'
+  5) Update the price of the 'Laptop' to 999.99 in the P1E1_Products table
+  6) Retrieve all products in the 'Electronics' category from the P1E1_Products table.
+  7) Delete the product with the price < 20from the P1E1_Products table
+  8) Remove all rows from the P1E1_Products table
+  9) Delete P1E1_Products table
 
 ================================================================================
 --------------------------------------------------------------------------------
