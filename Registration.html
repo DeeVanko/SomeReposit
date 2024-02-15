@@ -75,7 +75,6 @@
             display: block;
             margin-top: 10px;
         }
-
     </style>
 </head>
 <body>
@@ -91,11 +90,52 @@
         <input type="password" id="password" name="password" required>
     </div>
     <div class="form-group">
-        <button type="submit">Register</button>
+        <button type="button" onclick="registerUser()">Register</button>
     </div>
     <div class="separator"></div>
     <a class="login-link" href="#">Login</a>
 </div>
+
+<script>
+    function registerUser() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        if (!username || !password) {
+            // Тряска и изменение цвета при незаполненных полях
+            var formContainer = document.querySelector('.registration-container');
+            formContainer.classList.add('shake');
+            formContainer.style.backgroundColor = '#ffcccc'; // Цвет при ошибке
+            setTimeout(function () {
+                formContainer.classList.remove('shake');
+                formContainer.style.backgroundColor = '#ffffff'; // Возвращаем изначальный цвет
+            }, 500);
+            return;
+        }
+
+        // Ваш код регистрации (в данном случае вывод в консоль)
+        console.log('Registration successful!');
+    }
+</script>
+
+<style>
+    /* Добавленные стили для тряски */
+    .shake {
+        animation: shake 0.3s;
+    }
+
+    @keyframes shake {
+        0%, 100% {
+            transform: translateX(0);
+        }
+        25%, 75% {
+            transform: translateX(-5px);
+        }
+        50% {
+            transform: translateX(5px);
+        }
+    }
+</style>
 
 </body>
 </html>
