@@ -75,6 +75,28 @@
             display: block;
             margin-top: 10px;
         }
+
+        .error-message {
+            color: #ff0000;
+            margin-top: 5px;
+        }
+
+        /* Добавленные стили для тряски */
+        .shake {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0%, 100% {
+                transform: translateX(0) translateY(0);
+            }
+            25%, 75% {
+                transform: translateX(-5px) translateY(-5px);
+            }
+            50% {
+                transform: translateX(5px) translateY(5px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -84,10 +106,12 @@
     <div class="form-group">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
+        <div class="error-message" id="username-error"></div>
     </div>
     <div class="form-group">
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
+        <div class="error-message" id="password-error"></div>
     </div>
     <div class="form-group">
         <button type="button" onclick="registerUser()">Register</button>
@@ -100,45 +124,57 @@
     function registerUser() {
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
+        var usernameError = document.getElementById('username-error');
+        var passwordError = document.getElementById('password-error');
 
-        if (!username || !password) {
+        // NULL NULL
+        if (password.length === 0 && username.length === 0) {
             // Тряска и изменение цвета при незаполненных полях
             var formContainer = document.querySelector('.registration-container');
             formContainer.classList.add('shake');
-            formContainer.style.backgroundColor = '#ffcccc'; // Цвет при ошибке
+            formContainer.style.backgroundColor = 'rgb(230, 65, 73)'; // Цвет при ошибке #ffcccc
+
             setTimeout(function () {
                 formContainer.classList.remove('shake');
                 formContainer.style.backgroundColor = '#ffffff'; // Возвращаем изначальный цвет
             }, 500);
             return;
+        } 
+        // NULL FALSE
+        else if (password.length === 0 && username.length >= 1 && username.length < 8) {
+            // ваш код
+        } 
+        // FALSE NULL
+        else if (password.length >= 1 && password.length < 8 && username.length === 0) {
+            // ваш код
+        } 
+        // NULL TRUE
+        else if (password.length === 0 && username.length >= 8) {
+            // ваш код
+        } 
+        // TRUE NULL
+        else if (password.length >= 8 && username.length === 0) {
+            // ваш код
+        } 
+        // TRUE FALSE
+        else if (password.length >= 8 && username.length >= 1 && username.length < 8) {
+            // ваш код
+        }
+        // FALSE TRUE
+        else if (password.length >= 1 && password.length < 8 && username.length >= 8) {
+            // ваш код
+        }
+        // TRUE TRUE
+        else if (password.length >= 8 && username.length >= 8) {
+            // ваш код
         }
 
         // Ваш код регистрации (в данном случае вывод в консоль)
         console.log('Registration successful!');
         
-        // После успешной регистрации перенаправляем на указанную ссылку
-        window.location.href = 'https://www.youtube.com/watch?v=wMeor5hTFCs&list=RDNx8MN-rWJUg&index=4';
+        // Можете добавить дополнительные действия после успешной регистрации.
     }
 </script>
-
-<style>
-    /* Добавленные стили для тряски */
-    .shake {
-        animation: shake 0.3s;
-    }
-
-    @keyframes shake {
-        0%, 100% {
-            transform: translateX(0);
-        }
-        25%, 75% {
-            transform: translateX(-5px);
-        }
-        50% {
-            transform: translateX(5px);
-        }
-    }
-</style>
 
 </body>
 </html>
