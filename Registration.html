@@ -79,6 +79,12 @@
         .error-message {
             color: #ff0000;
             margin-top: 5px;
+            font-size: 0.7rem;
+        }
+        .correct-message {
+            color: #00ff6a;
+            margin-top: 5px;
+            font-size: 0.7rem;
         }
 
         /* Добавленные стили для тряски */
@@ -107,11 +113,13 @@
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
         <div class="error-message" id="username-error"></div>
+        <div class="correct-message" id="username-correct"></div>
     </div>
     <div class="form-group">
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
         <div class="error-message" id="password-error"></div>
+        <div class="correct-message" id="password-correct"></div>
     </div>
     <div class="form-group">
         <button type="button" onclick="registerUser()">Register</button>
@@ -121,16 +129,8 @@
 </div>
 
 <script>
-    function registerUser() {
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
-        var usernameError = document.getElementById('username-error');
-        var passwordError = document.getElementById('password-error');
-
-        // NULL NULL
-        if (password.length === 0 && username.length === 0) {
-            // Тряска и изменение цвета при незаполненных полях
-            var formContainer = document.querySelector('.registration-container');
+    function IOI() {
+        var formContainer = document.querySelector('.registration-container');
             formContainer.classList.add('shake');
             formContainer.style.backgroundColor = 'rgb(230, 65, 73)'; // Цвет при ошибке #ffcccc
 
@@ -138,41 +138,108 @@
                 formContainer.classList.remove('shake');
                 formContainer.style.backgroundColor = '#ffffff'; // Возвращаем изначальный цвет
             }, 500);
+    }
+    function registerUser() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        var usernameError = document.getElementById('username-error');
+        var passwordError = document.getElementById('password-error');
+        var usernameCorrect = document.getElementById('username-correct');
+        var passwordCorrect = document.getElementById('password-correct');
+        var I = 'Correct!', II = "Password must contain 8 characters or more!", III = "Username must contain 8 characters or more!", IIII = "";
+
+        // NULL NULL
+        if (password.length === 0 && username.length === 0) {
+            usernameError.textContent = IIII;
+            passwordError.textContent = IIII;
+            usernameCorrect.textContent = IIII;
+            passwordCorrect.textContent = IIII;
+            // Тряска и изменение цвета при незаполненных полях
+            IOI();
             return;
         } 
         // NULL FALSE
         else if (password.length === 0 && username.length >= 1 && username.length < 8) {
-            // ваш код
+            usernameError.textContent = IIII;
+            passwordError.textContent = IIII;
+            usernameCorrect.textContent = IIII;
+            passwordCorrect.textContent = IIII;
+            // Вывод итогово текста
         } 
         // FALSE NULL
         else if (password.length >= 1 && password.length < 8 && username.length === 0) {
-            // ваш код
+            usernameError.textContent = IIII;
+            passwordError.textContent = IIII;
+            usernameCorrect.textContent = IIII;
+            passwordCorrect.textContent = IIII;
+            // Вывод итогово текста
         } 
         // NULL TRUE
         else if (password.length === 0 && username.length >= 8) {
-            // ваш код
+            usernameError.textContent = IIII;
+            passwordError.textContent = IIII;
+            usernameCorrect.textContent = IIII;
+            passwordCorrect.textContent = IIII;
+            // Вывод итогово текста
         } 
         // TRUE NULL
         else if (password.length >= 8 && username.length === 0) {
-            // ваш код
+            usernameError.textContent = IIII;
+            passwordError.textContent = IIII;
+            usernameCorrect.textContent = IIII;
+            passwordCorrect.textContent = IIII;
+            // Вывод итогово текста
         } 
         // TRUE FALSE
         else if (password.length >= 8 && username.length >= 1 && username.length < 8) {
-            // ваш код
+            usernameError.textContent = IIII;
+            passwordError.textContent = IIII;
+            usernameCorrect.textContent = IIII;
+            passwordCorrect.textContent = IIII;
+            // Тряска и изменение цвета при незаполненных полях
+            IOI();
+            // Вывод итогово текста
+            passwordCorrect.textContent = I;
+            usernameError.textContent = III;
         }
         // FALSE TRUE
         else if (password.length >= 1 && password.length < 8 && username.length >= 8) {
-            // ваш код
+            usernameError.textContent = IIII;
+            passwordError.textContent = IIII;
+            usernameCorrect.textContent = IIII;
+            passwordCorrect.textContent = IIII;
+            // Тряска и изменение цвета при незаполненных полях
+            IOI();
+            // Вывод итогово текста
+            passwordError.textContent = II;
+            usernameCorrect.textContent = I;
+            return;
         }
         // TRUE TRUE
         else if (password.length >= 8 && username.length >= 8) {
-            // ваш код
+            usernameError.textContent = IIII;
+            passwordError.textContent = IIII;
+            usernameCorrect.textContent = IIII;
+            passwordCorrect.textContent = IIII;
+            // Тряска и изменение цвета при незаполненных полях
+            
+            // Вывод итогово текста
+            passwordCorrect.textContent = I;
+            usernameCorrect.textContent = I;
         }
-
-        // Ваш код регистрации (в данном случае вывод в консоль)
-        console.log('Registration successful!');
-        
-        // Можете добавить дополнительные действия после успешной регистрации.
+        // FALSE FALSE
+        else if (password.length >= 1 && password.length < 8 && username.length >= 1 && username.length < 8) {
+            usernameError.textContent = IIII;
+            passwordError.textContent = IIII;
+            usernameCorrect.textContent = IIII;
+            passwordCorrect.textContent = IIII;
+            // Тряска и изменение цвета при незаполненных полях
+            IOI();
+            // Вывод итогово текста
+            usernameError.textContent = III;
+            passwordError.textContent = II;
+            return;
+        }
     }
 </script>
 
