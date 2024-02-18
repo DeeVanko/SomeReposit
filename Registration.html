@@ -181,39 +181,39 @@
     function I_I_ERROR_I_I() {
         var formContainer = document.querySelector('.registration-container');
             formContainer.classList.add('I_NIGHT_I');
-            setTimeout(function () {
-                formContainer.classList.remove('I_NIGHT_I');
-                formContainer.style.backgroundColor = 'rgb(230, 65, 73)'; // Цвет при ошибке #ffcccc
-            }, 300);
+        setTimeout(function () {
+            formContainer.classList.remove('I_NIGHT_I');
+            // formContainer.style.backgroundColor = 'rgb(230, 65, 73)'; 
+        }, 300);
     }
     function I_I_FALSE_I_I() {
         var formContainer = document.querySelector('.registration-container');
             formContainer.classList.add('I_NIGHT_I');
-            setTimeout(function () {
-                formContainer.classList.remove('I_NIGHT_I');
-                formContainer.style.backgroundColor = 'rgb(230, 65, 73)'; // Цвет при ошибке #ffcccc
-            }, 300);
+        setTimeout(function () {
+            formContainer.classList.remove('I_NIGHT_I');
+            // formContainer.style.backgroundColor = '#FF8000'; 
+        }, 300);
     }
     function I_I_TRUE_I_I() {
         var formContainer = document.querySelector('.registration-container');
             formContainer.classList.add('I_NIGHT_I');
-            setTimeout(function () {
-                formContainer.classList.remove('I_NIGHT_I');
-                formContainer.style.backgroundColor = 'rgb(230, 65, 73)'; // Цвет при ошибке #ffcccc
-            }, 300);
+        setTimeout(function () {
+            formContainer.classList.remove('I_NIGHT_I');
+            // formContainer.style.backgroundColor = '#CCFFCC';
+        }, 300);
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //------------------------------------------------------------------------------------------------------ZONA OCHUZHDENIE------------------------------------------------------------------------------------------------------//
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function I_REMOVE_I(){
         // GET
-        var Form_Container_REGISTER = document.querySelector('.registration-container');
+        // var Form_Container_REGISTER = document.querySelector('.registration-container');
         var Form_Container_Username = document.querySelector('#username'), Form_Container_Password = document.querySelector('#password');
         var Error_Username = document.getElementById('username-error'), Error_Password = document.getElementById('password-error');
         var Correct_Username = document.getElementById('username-correct'), Correct_Password = document.getElementById('password-correct');
         var I = "", II = 'rgb(255, 255, 255)', III = '#dddddd';
         // SET
-        Form_Container_REGISTER.style.backgroundColor = '#ffffff';
+        // Form_Container_REGISTER.style.backgroundColor = '#ffffff';
         Form_Container_Username.style.backgroundColor = II, Form_Container_Username.style.borderColor = III;
         Form_Container_Password.style.backgroundColor = II, Form_Container_Password.style.borderColor = III;
         Error_Username.textContent = I, Error_Password.textContent = I;
@@ -247,12 +247,9 @@
 //------------------------------------------------------------------------------------------------------ZONA IF I STUPID------------------------------------------------------------------------------------------------------//
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function registerUser() {
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
-        var usernameError = document.getElementById('username-error');
-        var passwordError = document.getElementById('password-error');
-        var usernameCorrect = document.getElementById('username-correct');
-        var passwordCorrect = document.getElementById('password-correct');
+        var username = document.getElementById('username').value, password = document.getElementById('password').value;
+        var usernameError = document.getElementById('username-error'), passwordError = document.getElementById('password-error');
+        var usernameCorrect = document.getElementById('username-correct'), passwordCorrect = document.getElementById('password-correct');
         var I = 'Correct!', II = "Password must contain 8 characters or more!", III = "Username must contain 8 characters or more!", IIII = "";
 
         // NULL NULL ERROR
@@ -293,7 +290,7 @@
             // EFFECT
             I_I_ERROR_I_I();
             // RESULT
-            I_ERROR_USERNAME_I();
+            I_CORRECT_USERNAME_I();
             I_ERROR_PASSWORD_I();
         } 
         // TRUE NULL ERROR
@@ -304,46 +301,51 @@
             I_I_ERROR_I_I();
             // RESULT
             I_ERROR_USERNAME_I();
-            I_ERROR_PASSWORD_I();
+            I_CORRECT_PASSWORD_I();
         } 
-        // TRUE FALSE
+        // TRUE FALSE FALSE
         else if (password.length >= 8 && username.length >= 1 && username.length < 8) {
             // CLEAR
             I_REMOVE_I();
             // EFFECT
-            I_I_NIGHT_I_I();
+            I_I_FALSE_I_I();
             // RESULT
             I_ERROR_USERNAME_I();
-            I_ERROR_PASSWORD_I();
+            I_CORRECT_PASSWORD_I();
         }
-        // FALSE TRUE
+        // FALSE TRUE FALSE
         else if (password.length >= 1 && password.length < 8 && username.length >= 8) {
             // CLEAR
             I_REMOVE_I();
             // EFFECT
-            I_I_NIGHT_I_I();
+            I_I_FALSE_I_I();
             // RESULT
-            I_ERROR_USERNAME_I();
+            I_CORRECT_USERNAME_I();
             I_ERROR_PASSWORD_I();
             return;
         }
-        // TRUE TRUE
+        // TRUE TRUE TRUE
         else if (password.length >= 8 && username.length >= 8) {
             // CLEAR
             I_REMOVE_I();
             // EFFECT
-            I_I_NIGHT_I_I();
+            I_I_TRUE_I_I();
             // RESULT
             I_CORRECT_USERNAME_I();
             I_CORRECT_PASSWORD_I();
-
+            // NEW WINDOW
+            setTimeout(function () {
+                window.location.href = 'https://www.youtube.com/watch?v=wMeor5hTFCs&list=RDNx8MN-rWJUg&index=4';
+                // 1000 ms = 1s 
+            }, 1000);
+            
         }
-        // FALSE FALSE
+        // FALSE FALSE FALSE
         else if (password.length >= 1 && password.length < 8 && username.length >= 1 && username.length < 8) {
             // CLEAR
             I_REMOVE_I();
             // EFFECT
-            I_I_NIGHT_I_I();
+            I_I_FALSE_I_I();
             // RESULT
             I_ERROR_USERNAME_I();
             I_ERROR_PASSWORD_I();
