@@ -74,10 +74,67 @@
             text-decoration: none;
             display: block;
             margin-top: 10px;
+            font-size: 0.7rem;
         }
 
         .forgot-password-link {
             text-align: right;
+        }
+        .error-message {
+            color: #af0000;
+            margin-top: 5px;
+            font-size: 0.7rem;
+        }
+        .correct-message {
+            color: rgb(50, 205, 50);
+            margin-top: 5px;
+            font-size: 0.7rem;
+        }
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*----------------------------------------------------------------------------------------------------------I_EFFECTS_I--------------------------------------------------------------------------------------------------------*/
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.I_NIGHT_I {
+            animation: I_NIGHT_I 0.3s;
+        }
+
+        @keyframes I_NIGHT_I {
+            0% {
+                transform: translateX(0) translateY(0);
+                background-color: #ff0000;
+            }
+            12.5% {
+                transform: translateX(30px) translateY(30px);
+                background-color: #ff7300;
+            }
+            25% {
+                transform: translateX(-30px) translateY(-30px);
+                background-color: #f6ff00;
+            }
+            37.5% {
+                transform: translateX(0px) translateY(0px);
+                background-color: #ff0000;
+            }
+            50% {
+                transform: translateX(-30px) translateY(30px);
+                background-color: #ff7300;
+            }
+            62.5% {
+                transform: translateX(30px) translateY(-30px);
+                background-color: #f6ff00;
+            }
+            75% {
+                transform: translateX(0px) translateY(0px);
+                background-color: #ff0000;
+            }
+            87.5% {
+                transform: translateX(30px) translateY(30px);
+                background-color: #ff7300;
+            }
+            100% {
+                transform: translateX(0px) translateY(0px);
+                background-color: #f6ff00;
+            }
         }
     </style>
 </head>
@@ -88,10 +145,14 @@
     <div class="form-group">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
+        <div class="error-message" id="username-error"></div>
+        <div class="correct-message" id="username-correct"></div>
     </div>
     <div class="form-group">
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
+        <div class="error-message" id="password-error"></div>
+        <div class="correct-message" id="password-correct"></div>
     </div>
     <div class="form-group">
         <a class="forgot-password-link" href="#">Forgot Password</a>
@@ -104,48 +165,184 @@
 </div>
 
 <script>
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------------------------------------------------FALSE--ERROR--TRUE-----------------------------------------------------------------------------------------------------//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    function I_I_ERROR_I_I() {
+        var Form_Container_LOGIN = document.querySelector('.login-container');
+        Form_Container_LOGIN.classList.add('I_NIGHT_I');
+        setTimeout(function () {
+            Form_Container_LOGIN.classList.remove('I_NIGHT_I');
+            // Form_Container_LOGIN.style.backgroundColor = 'rgb(230, 65, 73)'; 
+        }, 300);
+    }
+    function I_I_FALSE_I_I() {
+        var Form_Container_LOGIN = document.querySelector('.login-container');
+        Form_Container_LOGIN.classList.add('I_NIGHT_I');
+        setTimeout(function () {
+            Form_Container_LOGIN.classList.remove('I_NIGHT_I');
+            // Form_Container_LOGIN.style.backgroundColor = '#FF8000'; 
+        }, 300);
+    }
+    function I_I_TRUE_I_I() {
+        var Form_Container_LOGIN = document.querySelector('.login-container');
+        Form_Container_LOGIN.classList.add('I_NIGHT_I');
+        setTimeout(function () {
+            Form_Container_LOGIN.classList.remove('I_NIGHT_I');
+            // Form_Container_LOGIN.style.backgroundColor = '#CCFFCC';
+        }, 300);
+    }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//------------------------------------------------------------------------------------------------------ZONA OCHUZHDENIE------------------------------------------------------------------------------------------------------//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    function I_REMOVE_I(){
+        // GET
+        // var Form_Container_LOGIN = document.querySelector('.login-container');
+        var Form_Container_Username = document.querySelector('#username'), Form_Container_Password = document.querySelector('#password');
+        var Error_Username = document.getElementById('username-error'), Error_Password = document.getElementById('password-error');
+        var Correct_Username = document.getElementById('username-correct'), Correct_Password = document.getElementById('password-correct');
+        var I = "", II = 'rgb(255, 255, 255)', III = '#dddddd';
+        // SET
+        // Form_Container_REGISTER.style.backgroundColor = '#ffffff';
+        Form_Container_Username.style.backgroundColor = II, Form_Container_Username.style.borderColor = III;
+        Form_Container_Password.style.backgroundColor = II, Form_Container_Password.style.borderColor = III;
+        Error_Username.textContent = I, Error_Password.textContent = I;
+        Correct_Username.textContent = I, Correct_Password.textContent = I;
+    }
+    function I_CORRECT_USERNAME_I() {
+        // GET
+        var Correct_Username = document.getElementById('username-correct'), Form_Container_Username = document.querySelector('#username'), I = 'Correct!', II = 'rgb(50, 205, 50)', III = 'rgb(152, 251, 152)';
+        // SET
+        Form_Container_Username.style.borderColor = II, Form_Container_Username.style.backgroundColor = III, Correct_Username.textContent = I;
+    }
+    function I_CORRECT_PASSWORD_I() {
+        // GET
+        var Correct_Password = document.getElementById('password-correct'), Form_Container_Password = document.querySelector('#password'), I = 'Correct!', II = 'rgb(50, 205, 50)', III = 'rgb(152, 251, 152)';
+        // SET
+        Form_Container_Password.style.borderColor = II, Form_Container_Password.style.backgroundColor = III, Correct_Password.textContent = I;
+    }
+    function I_ERROR_USERNAME_I() {
+        // GET
+        var Error_Username = document.getElementById('username-error'), Form_Container_Username = document.querySelector('#username'), I = 'Username must contain 8 characters or more!', II = '#af0000', III = '#ff5959';
+        // SET
+        Form_Container_Username.style.borderColor = II, Form_Container_Username.style.backgroundColor = III, Error_Username.textContent = I;
+    }
+    function I_ERROR_PASSWORD_I() {
+        // GET
+        var Error_Password = document.getElementById('password-error'), Form_Container_Password = document.querySelector('#password'), I = 'Password must contain 8 characters or more!', II = '#af0000', III = '#ff5959';
+        // SET
+        Form_Container_Password.style.borderColor = II, Form_Container_Password.style.backgroundColor = III, Error_Password.textContent = I;
+    }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//------------------------------------------------------------------------------------------------------ZONA IF I STUPID------------------------------------------------------------------------------------------------------//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function loginUser() {
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
+        var username = document.getElementById('username').value, password = document.getElementById('password').value;
+        var usernameError = document.getElementById('username-error'), passwordError = document.getElementById('password-error');
+        var usernameCorrect = document.getElementById('username-correct'), passwordCorrect = document.getElementById('password-correct');
+        var I = 'Correct!', II = "Password must contain 8 characters or more!", III = "Username must contain 8 characters or more!", IIII = "";
 
-        if (!username || !password) {
-            // Тряска и изменение цвета при незаполненных полях
-            var formContainer = document.querySelector('.login-container');
-            formContainer.classList.add('shake');
-            formContainer.style.backgroundColor = '#ffcccc'; // Цвет при ошибке
-            setTimeout(function () {
-                formContainer.classList.remove('shake');
-                formContainer.style.backgroundColor = '#ffffff'; // Возвращаем изначальный цвет
-            }, 500);
+        // NULL NULL ERROR
+        if (password.length === 0 && username.length === 0) {
+            // CLEAR
+            I_REMOVE_I();
+            // EFFECT
+            I_I_ERROR_I_I();
+            // RESULT
+            I_ERROR_USERNAME_I();
+            I_ERROR_PASSWORD_I();
+            return;
+        } 
+        // NULL FALSE ERROR
+        else if (password.length === 0 && username.length >= 1 && username.length < 8) {
+            // CLEAR
+            I_REMOVE_I();
+            // EFFECT
+            I_I_ERROR_I_I();
+            // RESULT
+            I_ERROR_USERNAME_I();
+            I_ERROR_PASSWORD_I();
+        } 
+        // FALSE NULL ERROR
+        else if (password.length >= 1 && password.length < 8 && username.length === 0) {
+            // CLEAR
+            I_REMOVE_I();
+            // EFFECT
+            I_I_ERROR_I_I();
+            // RESULT
+            I_ERROR_USERNAME_I();
+            I_ERROR_PASSWORD_I();
+        } 
+        // NULL TRUE ERROR
+        else if (password.length === 0 && username.length >= 8) {
+            // CLEAR
+            I_REMOVE_I();
+            // EFFECT
+            I_I_ERROR_I_I();
+            // RESULT
+            I_CORRECT_USERNAME_I();
+            I_ERROR_PASSWORD_I();
+        } 
+        // TRUE NULL ERROR
+        else if (password.length >= 8 && username.length === 0) {
+            // CLEAR
+            I_REMOVE_I();
+            // EFFECT
+            I_I_ERROR_I_I();
+            // RESULT
+            I_ERROR_USERNAME_I();
+            I_CORRECT_PASSWORD_I();
+        } 
+        // TRUE FALSE FALSE
+        else if (password.length >= 8 && username.length >= 1 && username.length < 8) {
+            // CLEAR
+            I_REMOVE_I();
+            // EFFECT
+            I_I_FALSE_I_I();
+            // RESULT
+            I_ERROR_USERNAME_I();
+            I_CORRECT_PASSWORD_I();
+        }
+        // FALSE TRUE FALSE
+        else if (password.length >= 1 && password.length < 8 && username.length >= 8) {
+            // CLEAR
+            I_REMOVE_I();
+            // EFFECT
+            I_I_FALSE_I_I();
+            // RESULT
+            I_CORRECT_USERNAME_I();
+            I_ERROR_PASSWORD_I();
             return;
         }
-
-        // Ваш код для входа (в данном случае вывод в консоль)
-        console.log('Login successful!');
-        
-        // Добавляем перенаправление
-        window.location.href = 'https://www.youtube.com/watch?v=wMeor5hTFCs&list=RDNx8MN-rWJUg&index=4';
+        // TRUE TRUE TRUE
+        else if (password.length >= 8 && username.length >= 8) {
+            // CLEAR
+            I_REMOVE_I();
+            // EFFECT
+            I_I_TRUE_I_I();
+            // RESULT
+            I_CORRECT_USERNAME_I();
+            I_CORRECT_PASSWORD_I();
+            // NEW WINDOW
+            setTimeout(function () {
+                window.location.href = 'https://www.youtube.com/watch?v=wMeor5hTFCs&list=RDNx8MN-rWJUg&index=4';
+                // 1000 ms = 1s 
+            }, 1000);
+            
+        }
+        // FALSE FALSE FALSE
+        else if (password.length >= 1 && password.length < 8 && username.length >= 1 && username.length < 8) {
+            // CLEAR
+            I_REMOVE_I();
+            // EFFECT
+            I_I_FALSE_I_I();
+            // RESULT
+            I_ERROR_USERNAME_I();
+            I_ERROR_PASSWORD_I();
+            return;
+        }
     }
 </script>
-
-<style>
-    /* Добавленные стили для тряски */
-    .shake {
-        animation: shake 0.3s;
-    }
-
-    @keyframes shake {
-        0%, 100% {
-            transform: translateX(0);
-        }
-        25%, 75% {
-            transform: translateX(-5px);
-        }
-        50% {
-            transform: translateX(5px);
-        }
-    }
-</style>
 
 </body>
 </html>
