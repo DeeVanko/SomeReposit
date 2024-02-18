@@ -74,6 +74,7 @@
             text-decoration: none;
             display: block;
             margin-top: 10px;
+            font-size: 0.7rem;
         }
 
         .error-message {
@@ -87,25 +88,8 @@
             font-size: 0.7rem;
         }
 
-        /* Добавленные стили для тряски */
-        .shake {
-            animation: shake 0.5s;
-        }
-
-        @keyframes shake {
-            0%, 100% {
-                transform: translateX(0) translateY(0);
-            }
-            25%, 75% {
-                transform: translateX(-5px) translateY(-5px);
-            }
-            50% {
-                transform: translateX(5px) translateY(5px);
-            }
-        }
-
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-/*------------------------------------------------------------------------------------------------------FALSE--ERROR--TRUE-----------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------I_EFFECTS_I--------------------------------------------------------------------------------------------------------*/
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
         .I_NIGHT_I {
             animation: I_NIGHT_I 0.3s;
@@ -174,32 +158,38 @@
     <a class="login-link" href="#">Login</a>
 </div>
 
+
+
+
+
+
+
 <script>
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //-----------------------------------------------------------------------------------------------------FALSE--ERROR--TRUE-----------------------------------------------------------------------------------------------------//
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function I_I_ERROR_I_I() {
-        var formContainer = document.querySelector('.registration-container');
-            formContainer.classList.add('I_NIGHT_I');
+        var Form_Container_REGISTER = document.querySelector('.registration-container');
+        Form_Container_REGISTER.classList.add('I_NIGHT_I');
         setTimeout(function () {
-            formContainer.classList.remove('I_NIGHT_I');
-            // formContainer.style.backgroundColor = 'rgb(230, 65, 73)'; 
+            Form_Container_REGISTER.classList.remove('I_NIGHT_I');
+            // Form_Container_REGISTER.style.backgroundColor = 'rgb(230, 65, 73)'; 
         }, 300);
     }
     function I_I_FALSE_I_I() {
-        var formContainer = document.querySelector('.registration-container');
-            formContainer.classList.add('I_NIGHT_I');
+        var Form_Container_REGISTER = document.querySelector('.registration-container');
+        Form_Container_REGISTER.classList.add('I_NIGHT_I');
         setTimeout(function () {
-            formContainer.classList.remove('I_NIGHT_I');
-            // formContainer.style.backgroundColor = '#FF8000'; 
+            Form_Container_REGISTER.classList.remove('I_NIGHT_I');
+            // Form_Container_REGISTER.style.backgroundColor = '#FF8000'; 
         }, 300);
     }
     function I_I_TRUE_I_I() {
-        var formContainer = document.querySelector('.registration-container');
-            formContainer.classList.add('I_NIGHT_I');
+        var Form_Container_REGISTER = document.querySelector('.registration-container');
+        Form_Container_REGISTER.classList.add('I_NIGHT_I');
         setTimeout(function () {
-            formContainer.classList.remove('I_NIGHT_I');
-            // formContainer.style.backgroundColor = '#CCFFCC';
+            Form_Container_REGISTER.classList.remove('I_NIGHT_I');
+            // Form_Container_REGISTER.style.backgroundColor = '#CCFFCC';
         }, 300);
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
