@@ -12,9 +12,9 @@
 
     <style>
         :root{
-            --SC-RED:#ff0000;
-            --SC-DARK:#0a120b;
-            --SC-WHITE:#ffffff;
+            --SC-RED:#ff0000;                      /*        var(--SC-RED);          */
+            --SC-DARK:#0a120b;                     /*        var(--SC-DARK);         */
+            --SC-WHITE:#ffffff;                    /*        var(--SC-WHITE);        */
             
         }
         body {
@@ -55,14 +55,35 @@
             color: #ff0000;
         }
 
-        .form-group input {
-            width: 100%;
-            padding: 8px;
+        input {
+            padding: 0.5rem;
             box-sizing: border-box;
-            border: 1px solid #dddddd;
-            border-radius: 3px;
+
+            border: 2px solid var(--SC-RED);                         /*         цвет рамки                                                                                   */
+            border-radius: 10px;                                     /*         закругление углов (общее)                                                                    */
+            -webkit-border-radius: 10px;                             /*         закругление углов (Google Chrome)                                                            */
+            -moz-border-radius: 10px;                                /*         закругление углов (FireFox)                                                                  */
+            -khtml-border-radius: 10px;                              /*         закругление углов (Safari)                                                                   */
+            background: var(--SC-DARK);                              /*         желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым          */
+            outline: none;                                           /*         удаляет обводку в браузерах хром(желтая) и сафари(синяя)                                     */
+            height: 2.5rem;                                          /*         высота на свое усмотрение                                                                    */
+            width: 100%;                                             /*         ширина на свое усмотрение                                                                    */
+            color: #ff0000;                                        /*         цвет шрифта в обычном состоянии                                                              */
+            font-size: 1rem;                                         /*         Размер шрифта                                                                                */
+        }
+        input:focus {
+            color: #ffffff;
+            border: 1px solid #ffffff
         }
 
+        ::placeholder {
+            color: var(--SC-RED);
+            opacity: 0.5;                                            /*        Firefox                                                                                       */
+        }
+            
+        ::-ms-input-placeholder {                                    /*        Edge 12 -18                                                                                   */
+            color: var(--SC-RED);
+        }
         .form-group button {
             background-color: #ff0000;
             color: #ffffff;
@@ -161,13 +182,13 @@
     <img src="IMG/OdynXBET-logo.png" alt="IMG_P4_1" style="width:200px;height:100px;">
     <div class="form-group">
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
+        <input type="text" id="username" name="username" required placeholder="Adolf_Hitler_39">
         <div class="error-message" id="username-error"></div>
         <div class="correct-message" id="username-correct"></div>
     </div>
     <div class="form-group">
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required placeholder="Введите ваш кошелек">
+        <input type="password" id="password" name="password" required placeholder="Dat-V_Rot_Stal1nU">
         <div class="error-message" id="password-error"></div>
         <div class="correct-message" id="password-correct"></div>
     </div>
