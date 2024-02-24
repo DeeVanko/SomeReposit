@@ -15,7 +15,9 @@
             --SC-RED:#ff0000;                      /*        var(--SC-RED);          */
             --SC-DARK:#0a120b;                     /*        var(--SC-DARK);         */
             --SC-WHITE:#ffffff;                    /*        var(--SC-WHITE);        */
-            
+            --SC-ORANGE:#ff7300;                   /*        var(--SC-ORANGE);       */
+            --SC-YELLOW:#f6ff00;                   /*        var(--SC-YELLOW);       */
+            --SC-WHITE:#ffffff;                    /*        var(--SC-WHITE);        */
         }
         body {
             font-family: Arial, sans-serif;
@@ -33,7 +35,7 @@
             border-color: var(--SC-RED);
             padding: 20px;
             border-radius: 50px;
-            box-shadow: 0 0 20px #ff0000;
+            box-shadow: 0 0 20px var(--SC-RED);
             width: 300px;
             text-align: center;
         }
@@ -51,8 +53,8 @@
         .form-group label {
             display: block;
             margin-bottom: 5px;
-            text-shadow: #ff0000 0 0 15px;
-            color: #ff0000;
+            text-shadow: var(--SC-RED) 0 0 15px;
+            color: var(--SC-RED);
         }
 
         input {
@@ -68,36 +70,50 @@
             outline: none;                                           /*         удаляет обводку в браузерах хром(желтая) и сафари(синяя)                                     */
             height: 2.5rem;                                          /*         высота на свое усмотрение                                                                    */
             width: 100%;                                             /*         ширина на свое усмотрение                                                                    */
-            color: #ff0000;                                        /*         цвет шрифта в обычном состоянии                                                              */
+            color: var(--SC-RED);                                    /*         цвет шрифта в обычном состоянии                                                              */
             font-size: 1rem;                                         /*         Размер шрифта                                                                                */
         }
-        input:focus {
-            color: #ffffff;
-            border: 1px solid #ffffff
+        input:hover {
+            color: var(--SC-WHITE);
+            border: 1px solid var(--SC-WHITE);
         }
-
+        input:focus {
+            color: var(--SC-WHITE);
+            border: 1px solid var(--SC-WHITE);
+        }
         ::placeholder {
             color: var(--SC-RED);
             opacity: 0.5;                                            /*        Firefox                                                                                       */
         }
-            
         ::-ms-input-placeholder {                                    /*        Edge 12 -18                                                                                   */
             color: var(--SC-RED);
         }
+
         .form-group button {
-            background-color: #ff0000;
-            color: #ffffff;
-            padding: 10px;
-            border: none;
-            border-radius: 3px;
+            padding: 0.5rem;
+            box-sizing: border-box;
+            border: 2px solid var(--SC-WHITE);                       /*         цвет рамки                                                                                   */
+            border-radius: 10px;                                     /*         закругление углов (общее)                                                                    */
+            -webkit-border-radius: 10px;                             /*         закругление углов (Google Chrome)                                                            */
+            -moz-border-radius: 10px;                                /*         закругление углов (FireFox)                                                                  */
+            -khtml-border-radius: 10px;                              /*         закругление углов (Safari)                                                                   */
+            background: var(--SC-DARK);                              /*         желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым          */
+            outline: none;                                           /*         удаляет обводку в браузерах хром(желтая) и сафари(синяя)                                     */
+            height: 2.5rem;                                          /*         высота на свое усмотрение                                                                    */
+            width: 100%;                                             /*         ширина на свое усмотрение                                                                    */
+            color: var(--SC-WHITE);                                  /*         цвет шрифта в обычном состоянии                                                              */
+            font-size: 1rem;                                         /*         Размер шрифта                                                                                */
+
+            opacity: 0.5;
             cursor: pointer;
-            width: 100%;
             margin-bottom: 10px;
         }
 
         .form-group button:hover {
             animation: ease-out;
-            background-color: #29b92b;
+            background-color: var(--SC-RED);
+            box-shadow: 0 0 0 2px var(--SC-WHITE);
+            opacity: 1;
         }
 
         .separator {
@@ -139,39 +155,39 @@
         @keyframes I_NIGHT_I {
             0% {
                 transform: translateX(0) translateY(0);
-                background-color: #ff0000;
+                background-color: var(--SC-RED);
             }
             12.5% {
                 transform: translateX(30px) translateY(30px);
-                background-color: #ff7300;
+                background-color: var(--SC-ORANGE);
             }
             25% {
                 transform: translateX(-30px) translateY(-30px);
-                background-color: #f6ff00;
+                background-color: var(--SC-YELLOW);
             }
             37.5% {
                 transform: translateX(0px) translateY(0px);
-                background-color: #ff0000;
+                background-color: var(--SC-RED);
             }
             50% {
                 transform: translateX(-30px) translateY(30px);
-                background-color: #ff7300;
+                background-color: var(--SC-ORANGE);
             }
             62.5% {
                 transform: translateX(30px) translateY(-30px);
-                background-color: #f6ff00;
+                background-color: var(--SC-YELLOW);
             }
             75% {
                 transform: translateX(0px) translateY(0px);
-                background-color: #ff0000;
+                background-color: var(--SC-RED);
             }
             87.5% {
                 transform: translateX(30px) translateY(30px);
-                background-color: #ff7300;
+                background-color: var(--SC-ORANGE);
             }
             100% {
                 transform: translateX(0px) translateY(0px);
-                background-color: #f6ff00;
+                background-color: var(--SC-YELLOW);
             }
         }
     </style>
