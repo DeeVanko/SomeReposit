@@ -20,7 +20,7 @@ body{
     width: 100vw;                                                      /*                     Отображение ширины элемента относительно Браузера                                            */
     background-color: var(--SC-DARK);                                  /*                     Цвет заднего фона                                                                            */
 }
-.CONTEINER-LP {
+.CONTEINER-LP, .CONTEINER-RP{
     width: 18.75rem;                                                   /*                     Отображение ширины элемента относительно значений шрифта                                     */
     padding: 1.25rem;                                                  /*                     Внутренние отступы элемента                                                                  */
     text-align: center;                                                /*                     Выравнивание текста внутри элемента                                                          */
@@ -35,17 +35,17 @@ body{
     margin: 1.25rem;                                                   /*                     Внешние отступы элемента                                                                     */
     filter: drop-shadow(0 0 0.225rem var(--SC-RED));                   /*                     Теневой цвет элемента                                                                        */
 }
-.FORM-GROUP-1 {
+.FORM-GROUP-1, .FORM-GROUP-2{
     margin-bottom: 0.9375rem;                                          /*                     Внешние отступы элемента                                                                     */
     text-align: left;                                                  /*                     Выравнивание текста внутри элемента                                                          */
 }
-.FORM-GROUP-1-LABEL {
+.FORM-GROUP-1-LABEL, .FORM-GROUP-2-LABEL{
     display: block;                                                    /*                     Контейнер с блочным распределением элементов                                                 */
     margin-bottom: 0.4125rem;                                          /*                     Внешние отступы элемента                                                                     */
     text-shadow: var(--SC-RED) 0 0 0.9375rem;                          /*                     Теневой цвет элемента                                                                        */
     color: var(--SC-RED);                                              /*                     Цвет шрифта в обычном состоянии                                                              */
 }
-.FORM-GROUP-1-INPUT{
+.FORM-GROUP-1-INPUT, .FORM-GROUP-2-INPUT{
     padding: 0.5rem;                                                   /*                     Внутренние отступы элемента                                                                  */
     box-sizing: border-box;                                            /*                     Контейнер с гибким распределением элементов                                                  */
     border: 0.17rem solid var(--SC-RED);                               /*                     Граница для элемента и цвет границы                                                          */
@@ -62,22 +62,22 @@ body{
     color: var(--SC-RED);                                              /*                     Цвет шрифта в обычном состоянии                                                              */
     font-size: 1rem;                                                   /*                     Размер шрифта                                                                                */
 }
-.FORM-GROUP-1-INPUT:hover {
+.FORM-GROUP-1-INPUT:hover, .FORM-GROUP-2-INPUT:hover{
     color: var(--SC-WHITE);                                            /*                     Цвет шрифта в обычном состоянии                                                              */
     border: 0.17rem solid var(--SC-WHITE);                             /*                     Граница для элемента и цвет границы                                                          */
 }
-.FORM-GROUP-1-INPUT:focus {
+.FORM-GROUP-1-INPUT:focus, .FORM-GROUP-2-INPUT:focus{
     color: var(--SC-WHITE);                                            /*                     Цвет шрифта в обычном состоянии                                                              */
     border: 0.17rem solid var(--SC-WHITE);                             /*                     Граница для элемента и цвет границы                                                          */
 }
-.FORM-GROUP-1-INPUT::PLACEHOLDER {
+.FORM-GROUP-1-INPUT::PLACEHOLDER, .FORM-GROUP-2-INPUT::PLACEHOLDER{
     color: var(--SC-RED);                                              /*                     Цвет шрифта в обычном состоянии                                                              */
     opacity: 0.5;                                                      /*                     Прозрачность                                                                                 */
 }
-.FORM-GROUP-1-INPUT::-MS-INPUT-PLACEHOLDER {
+.FORM-GROUP-1-INPUT::-MS-INPUT-PLACEHOLDER, .FORM-GROUP-2-INPUT::-MS-INPUT-PLACEHOLDER{
     color: var(--SC-RED);                                              /*                     Цвет шрифта в обычном состоянии                                                              */
 }
-.FORM-GROUP-1-BUTTON{
+.FORM-GROUP-1-BUTTON, .FORM-GROUP-2-BUTTON{
     padding: 0.5rem;                                                   /*                     Внутренние отступы элемента                                                                  */
     box-sizing: border-box;                                            /*                     Контейнер с гибким распределением элементов                                                  */
     border: 0.17rem solid var(--SC-RED);                               /*                     Граница для элемента и цвет границы                                                          */
@@ -96,7 +96,10 @@ body{
     cursor: pointer;                                                   /*                     Курсор                                                                                       */
     margin-bottom: 0.625rem;                                           /*                     Внешние отступы элемента                                                                     */
 }
-.FORM-GROUP-1-BUTTON:hover {
+.FORM-GROUP-2-BUTTON{
+    margin-top: 1.5rem;
+}
+.FORM-GROUP-1-BUTTON:hover, .FORM-GROUP-2-BUTTON:hover{
     border: 0.17rem solid var(--SC-WHITE);                             /*                     Граница для элемента и цвет границы                                                          */
     background: var(--SC-RED);                                         /*                     Желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым          */
     box-shadow: 0 0 0.5rem var(--SC-RED);                              /*                     Теневой цвет элемента                                                                        */
@@ -107,7 +110,7 @@ body{
     border-bottom: 0.125rem solid var(--SC-WHITE);                     /*                     Граница для элемента и цвет границы                                                          */
     position: relative;                                                /*                     позиционирование элемента относительно его исходного положения                               */
 }
-.LINK-REGISTER, .LINK-FORGOT-PASSWORD{
+.LINK-REGISTER, .LINK-FORGOT-PASSWORD, .LINK-LOGIN{
     color: var(--SC-WHITE);                                            /*                     Цвет шрифта в обычном состоянии                                                              */
     text-decoration: none;                                             /*                     Шрифта обычном состоянии без декораций                                                       */
     display: block;                                                    /*                     Контейнер с блочным распределением элементов                                                 */
