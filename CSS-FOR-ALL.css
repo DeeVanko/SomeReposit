@@ -17,8 +17,7 @@ body{
     width: 100vw;                                                      /*                     Отображение ширины элемента относительно Браузера                    */
     background-color: var(--SC-DARK);                                  /*                     Цвет заднего фона                                                    */
 }
-
-.login-container {
+.CONTEINER-LP {
     width: 18.75rem;                                                   /*                     Отображение ширины элемента относительно значений шрифта             */
     padding: 1.25rem;                                                  /*                     Внутренние отступы элемента                                          */
     text-align: center;                                                /*                     Выравнивание текста внутри элемента                                  */
@@ -27,14 +26,94 @@ body{
     box-shadow: 0 0 1.25rem var(--SC-RED);                             /*                     Теневой цвет элемента                                                */
     background-color: var(--SC-DARK-BROWN-WL-INTENSITY);               /*                     Цвет заднего фона                                                    */
 }
-#IMG_LOGO{
-    width:12.5rem;
-    height:6.25rem;
-    margin: 1.25rem;
-    filter: drop-shadow(0 0 0.225rem var(--SC-RED));
+#IMG-LOGO{
+    width: 12.5rem;                                                    /*                     Отображение высоты элемента относительно значений шрифта             */
+    height: 6.25rem;                                                   /*                     Отображение ширины элемента относительно значений шрифта             */
+    margin: 1.25rem;                                                   /*                     Внешние отступы элемента                                             */
+    filter: drop-shadow(0 0 0.225rem var(--SC-RED));                   /*                     Теневой цвет элемента                                                */
+}
+.FORM-GROUP-1 {
+    margin-bottom: 0.9375rem;                                          /*                     Внешние отступы элемента                                             */
+    text-align: left;                                                  /*                     Выравнивание текста внутри элемента                                  */
+}
+.FORM-GROUP-1-LABEL {
+    display: block;
+    margin-bottom: 5px;
+    text-shadow: var(--SC-RED) 0 0 15px;
+    color: var(--SC-RED);
+}
+.FORM-GROUP-1-INPUT{
+    padding: 0.5rem;
+    box-sizing: border-box;
+
+    border: 2px solid var(--SC-RED);                         /*         цвет рамки                                                                                   */
+    border-radius: 10px;                                     /*         закругление углов (общее)                                                                    */
+    -webkit-border-radius: 10px;                             /*         закругление углов (Google Chrome)                                                            */
+    -moz-border-radius: 10px;                                /*         закругление углов (FireFox)                                                                  */
+    -khtml-border-radius: 10px;                              /*         закругление углов (Safari)                                                                   */
+    background: var(--SC-DARK);                              /*         желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым          */
+    outline: none;                                           /*         удаляет обводку в браузерах хром(желтая) и сафари(синяя)                                     */
+    height: 2.5rem;                                          /*         высота на свое усмотрение                                                                    */
+    width: 100%;                                             /*         ширина на свое усмотрение                                                                    */
+    color: var(--SC-RED);                                    /*         цвет шрифта в обычном состоянии                                                              */
+    font-size: 1rem;                                         /*         Размер шрифта                                                                                */
+}
+.FORM-GROUP-1-INPUT:hover {
+    color: var(--SC-WHITE);
+    border: 1px solid var(--SC-WHITE);
+}
+.FORM-GROUP-1-INPUT:focus {
+    color: var(--SC-WHITE);
+    border: 1px solid var(--SC-WHITE);
+}
+::PLACEHOLDER {
+    color: var(--SC-RED);
+    opacity: 0.5;                                            /*        Firefox                                                                                       */
+}
+::-MS-INPUT-PLACEHOLDER {                                    /*        Edge 12 -18                                                                                   */
+    color: var(--SC-RED);
+}
+.FORM-GROUP-1-BUTTON{
+    padding: 0.5rem;
+    box-sizing: border-box;
+    border: 2px solid var(--SC-WHITE);                        /*         цвет рамки                                                                                   */
+    border-radius: 10px;                                     /*         закругление углов (общее)                                                                    */
+    -webkit-border-radius: 10px;                             /*         закругление углов (Google Chrome)                                                            */
+    -moz-border-radius: 10px;                                /*         закругление углов (FireFox)                                                                  */
+    -khtml-border-radius: 10px;                              /*         закругление углов (Safari)                                                                   */
+    background: var(--SC-DARK);                              /*         желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым          */
+    outline: none;                                           /*         удаляет обводку в браузерах хром(желтая) и сафари(синяя)                                     */
+    height: 2.5rem;                                          /*         высота на свое усмотрение                                                                    */
+    width: 100%;                                             /*         ширина на свое усмотрение                                                                    */
+    color: var(--SC-WHITE);                                   /*         цвет шрифта в обычном состоянии                                                              */
+    font-size: 1rem;                                         /*         Размер шрифта                                                                                */
+
+    opacity: 1;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.FORM-GROUP-1-BUTTON:hover {
+    animation: ease-out;
+    background-color: var(--SC-RED);
+    box-shadow: 0 0 0 2px var(--SC-WHITE);
+    opacity: 1;
 }
 
-
+.SEPARATOR {
+    margin: 15px 0;
+    border-bottom: 2px solid var(--SC-WHITE);
+    position: relative;
+}
+.LINK-REGISTER, .LINK-FORGOT-PASSWORD{
+    color: var(--SC-WHITE);
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+    font-size: 0.7rem;
+}
+.LINK-FORGOT-PASSWORD {
+    text-align: right;
+}
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /*----------------------------------------------------------------------------------------------------------I_EFFECTS_I--------------------------------------------------------------------------------------------------------*/
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
