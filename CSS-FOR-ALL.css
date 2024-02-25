@@ -1,20 +1,85 @@
 :root{
     --SC-RED:#ff0000;                                                /*                     var(--SC-RED);                                                       */
-    --SC-DARK:#000a14;                                               /*                     var(--SC-DARK);                                                      */
+    --SC-DARK:#000000;                                               /*                     var(--SC-DARK);                                                      */
     --SC-WHITE:#ffffff;                                              /*                     var(--SC-WHITE);                                                     */
     --SC-ORANGE:#ff7300;                                             /*                     var(--SC-ORANGE);                                                    */
     --SC-YELLOW:#f6ff00;                                             /*                     var(--SC-YELLOW);                                                    */
     --SC-GRAY:#adadad;                                               /*                     var(--SC-GRAY);                                                      */
-
+    --SC-DARK-BROWN-WL-INTENSITY:#160004;                            /*                     var(--SC-DARK-BROWN-WL-INTENSITY);                                   */
     font-family: Arial, sans-serif;                                    /*                     Основной шрифт                                                       */
 }
 body{
-    background-color: var(--SC-DARK);                                  /*                     Цвет заднего фона                                                    */
-    margin: 0;
-    height: 100vh;                                                     /*                     Отображение высоты элемента относительно Браузера                    */
-    width: 100vw;                                                      /*                     Отображение ширины элемента относительно Браузера                    */
-
+    margin: 0;                                                         /*                     Внешние отступы элемента                                             */
     display: flex;                                                     /*                     Контейнер с гибким распределением элементов                          */
     justify-content: center;                                           /*                     Выравнивание по горизонтали                                          */
     align-items: center;                                               /*                     Выравнивание по вертикали                                            */
+    height: 100vh;                                                     /*                     Отображение высоты элемента относительно Браузера                    */
+    width: 100vw;                                                      /*                     Отображение ширины элемента относительно Браузера                    */
+    background-color: var(--SC-DARK);                                  /*                     Цвет заднего фона                                                    */
 }
+
+.login-container {
+    width: 18.75rem;                                                   /*                     Отображение ширины элемента относительно значений шрифта             */
+    padding: 1.25rem;                                                  /*                     Внутренние отступы элемента                                          */
+    text-align: center;                                                /*                     Выравнивание текста внутри элемента                                  */
+    border: 0.17rem solid var(--SC-WHITE);                             /*                     Граница для элемента и цвет границы                                  */
+    border-radius: 2.5rem;                                             /*                     Закгругление границы для элемента                                    */
+    box-shadow: 0 0 1.25rem var(--SC-RED);                             /*                     Теневой цвет элемента                                                */
+    background-color: var(--SC-DARK-BROWN-WL-INTENSITY);               /*                     Цвет заднего фона                                                    */
+}
+#IMG_LOGO{
+    width:12.5rem;
+    height:6.25rem;
+    margin: 1.25rem;
+    filter: drop-shadow(0 0 0.225rem var(--SC-RED));
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*----------------------------------------------------------------------------------------------------------I_EFFECTS_I--------------------------------------------------------------------------------------------------------*/
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.I_NIGHT_I {
+    animation: I_NIGHT_I 0.3s;
+}
+
+@keyframes I_NIGHT_I {
+    0% {
+        transform: translateX(0) translateY(0);
+        background-color: var(--SC-RED);
+    }
+    12.5% {
+        transform: translateX(30px) translateY(30px);
+        background-color: var(--SC-ORANGE);
+    }
+    25% {
+        transform: translateX(-30px) translateY(-30px);
+        background-color: var(--SC-YELLOW);
+    }
+    37.5% {
+        transform: translateX(0px) translateY(0px);
+        background-color: var(--SC-RED);
+    }
+    50% {
+        transform: translateX(-30px) translateY(30px);
+        background-color: var(--SC-ORANGE);
+    }
+    62.5% {
+        transform: translateX(30px) translateY(-30px);
+        background-color: var(--SC-YELLOW);
+    }
+    75% {
+        transform: translateX(0px) translateY(0px);
+        background-color: var(--SC-RED);
+    }
+    87.5% {
+        transform: translateX(30px) translateY(30px);
+        background-color: var(--SC-ORANGE);
+    }
+    100% {
+        transform: translateX(0px) translateY(0px);
+        background-color: var(--SC-YELLOW);
+    }
+}
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*----------------------------------------------------------------------------------------------------------I_EFFECTS_I--------------------------------------------------------------------------------------------------------*/
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
