@@ -1,0 +1,20 @@
+:root{
+    --SC-RED:#ff0000;                                                /*                     var(--SC-RED);                                                       */
+    --SC-DARK:#000a14;                                               /*                     var(--SC-DARK);                                                      */
+    --SC-WHITE:#ffffff;                                              /*                     var(--SC-WHITE);                                                     */
+    --SC-ORANGE:#ff7300;                                             /*                     var(--SC-ORANGE);                                                    */
+    --SC-YELLOW:#f6ff00;                                             /*                     var(--SC-YELLOW);                                                    */
+    --SC-GRAY:#adadad;                                               /*                     var(--SC-GRAY);                                                      */
+
+    font-family: Arial, sans-serif;                                    /*                     Основной шрифт                                                       */
+}
+body{
+    background-color: var(--SC-DARK);                                  /*                     Цвет заднего фона                                                    */
+    margin: 0;
+    height: 100vh;                                                     /*                     Отображение высоты элемента относительно Браузера                    */
+    width: 100vw;                                                      /*                     Отображение ширины элемента относительно Браузера                    */
+
+    display: flex;                                                     /*                     Контейнер с гибким распределением элементов                          */
+    justify-content: center;                                           /*                     Выравнивание по горизонтали                                          */
+    align-items: center;                                               /*                     Выравнивание по вертикали                                            */
+}
