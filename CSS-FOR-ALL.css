@@ -1,118 +1,120 @@
+html {
+    font-size: 16px;
+}
 :root{
-    --SC-RED:#ff0000;                                                /*                     var(--SC-RED);                                                       */
-    --SC-DARK:#000000;                                               /*                     var(--SC-DARK);                                                      */
-    --SC-WHITE:#ffffff;                                              /*                     var(--SC-WHITE);                                                     */
-    --SC-ORANGE:#ff7300;                                             /*                     var(--SC-ORANGE);                                                    */
-    --SC-YELLOW:#f6ff00;                                             /*                     var(--SC-YELLOW);                                                    */
-    --SC-GRAY:#adadad;                                               /*                     var(--SC-GRAY);                                                      */
-    --SC-DARK-BROWN-WL-INTENSITY:#160004;                            /*                     var(--SC-DARK-BROWN-WL-INTENSITY);                                   */
-    font-family: Arial, sans-serif;                                    /*                     Основной шрифт                                                       */
+    --SC-RED:#ff0000;                                                /*                     var(--SC-RED);                                                                               */
+    --SC-DARK:#000000;                                               /*                     var(--SC-DARK);                                                                              */
+    --SC-WHITE:#ff5100;                                              /*                     var(--SC-WHITE);                                                                             */
+    --SC-ORANGE:#ff7300;                                             /*                     var(--SC-ORANGE);                                                                            */
+    --SC-YELLOW:#f6ff00;                                             /*                     var(--SC-YELLOW);                                                                            */
+    --SC-DARK-BROWN-WM-INTENSITY:#35000a;                            /*                     var(--SC-DARK-BROWN-WM-INTENSITY);                                                           */
+    --SC-DARK-BROWN-WL-INTENSITY:#160004;                            /*                     var(--SC-DARK-BROWN-WL-INTENSITY);                                                           */
+    font-family: Arial, sans-serif;                                    /*                     Основной шрифт                                                                               */
 }
 body{
-    margin: 0;                                                         /*                     Внешние отступы элемента                                             */
-    display: flex;                                                     /*                     Контейнер с гибким распределением элементов                          */
-    justify-content: center;                                           /*                     Выравнивание по горизонтали                                          */
-    align-items: center;                                               /*                     Выравнивание по вертикали                                            */
-    height: 100vh;                                                     /*                     Отображение высоты элемента относительно Браузера                    */
-    width: 100vw;                                                      /*                     Отображение ширины элемента относительно Браузера                    */
-    background-color: var(--SC-DARK);                                  /*                     Цвет заднего фона                                                    */
+    margin: 0;                                                         /*                     Внешние отступы элемента                                                                     */
+    display: flex;                                                     /*                     Контейнер с гибким распределением элементов                                                  */
+    justify-content: center;                                           /*                     Выравнивание по горизонтали                                                                  */
+    align-items: center;                                               /*                     Выравнивание по вертикали                                                                    */
+    height: 100vh;                                                     /*                     Отображение высоты элемента относительно Браузера                                            */
+    width: 100vw;                                                      /*                     Отображение ширины элемента относительно Браузера                                            */
+    background-color: var(--SC-DARK);                                  /*                     Цвет заднего фона                                                                            */
 }
 .CONTEINER-LP {
-    width: 18.75rem;                                                   /*                     Отображение ширины элемента относительно значений шрифта             */
-    padding: 1.25rem;                                                  /*                     Внутренние отступы элемента                                          */
-    text-align: center;                                                /*                     Выравнивание текста внутри элемента                                  */
-    border: 0.17rem solid var(--SC-WHITE);                             /*                     Граница для элемента и цвет границы                                  */
-    border-radius: 2.5rem;                                             /*                     Закгругление границы для элемента                                    */
-    box-shadow: 0 0 1.25rem var(--SC-RED);                             /*                     Теневой цвет элемента                                                */
-    background-color: var(--SC-DARK-BROWN-WL-INTENSITY);               /*                     Цвет заднего фона                                                    */
+    width: 18.75rem;                                                   /*                     Отображение ширины элемента относительно значений шрифта                                     */
+    padding: 1.25rem;                                                  /*                     Внутренние отступы элемента                                                                  */
+    text-align: center;                                                /*                     Выравнивание текста внутри элемента                                                          */
+    border: 0.17rem solid var(--SC-WHITE);                             /*                     Граница для элемента и цвет границы                                                          */
+    border-radius: 2.5rem;                                             /*                     Закгругление границы для элемента                                                            */
+    box-shadow: 0 0 1.25rem var(--SC-RED);                             /*                     Теневой цвет элемента                                                                        */
+    background-color: var(--SC-DARK-BROWN-WL-INTENSITY);               /*                     Цвет заднего фона                                                                            */
 }
 #IMG-LOGO{
-    width: 12.5rem;                                                    /*                     Отображение высоты элемента относительно значений шрифта             */
-    height: 6.25rem;                                                   /*                     Отображение ширины элемента относительно значений шрифта             */
-    margin: 1.25rem;                                                   /*                     Внешние отступы элемента                                             */
-    filter: drop-shadow(0 0 0.225rem var(--SC-RED));                   /*                     Теневой цвет элемента                                                */
+    width: 12.5rem;                                                    /*                     Отображение высоты элемента относительно значений шрифта                                     */
+    height: 6.25rem;                                                   /*                     Отображение ширины элемента относительно значений шрифта                                     */
+    margin: 1.25rem;                                                   /*                     Внешние отступы элемента                                                                     */
+    filter: drop-shadow(0 0 0.225rem var(--SC-RED));                   /*                     Теневой цвет элемента                                                                        */
 }
 .FORM-GROUP-1 {
-    margin-bottom: 0.9375rem;                                          /*                     Внешние отступы элемента                                             */
-    text-align: left;                                                  /*                     Выравнивание текста внутри элемента                                  */
+    margin-bottom: 0.9375rem;                                          /*                     Внешние отступы элемента                                                                     */
+    text-align: left;                                                  /*                     Выравнивание текста внутри элемента                                                          */
 }
 .FORM-GROUP-1-LABEL {
-    display: block;
-    margin-bottom: 5px;
-    text-shadow: var(--SC-RED) 0 0 15px;
-    color: var(--SC-RED);
+    display: block;                                                    /*                     Контейнер с блочным распределением элементов                                                 */
+    margin-bottom: 0.4125rem;                                          /*                     Внешние отступы элемента                                                                     */
+    text-shadow: var(--SC-RED) 0 0 0.9375rem;                          /*                     Теневой цвет элемента                                                                        */
+    color: var(--SC-RED);                                              /*                     Цвет шрифта в обычном состоянии                                                              */
 }
 .FORM-GROUP-1-INPUT{
-    padding: 0.5rem;
-    box-sizing: border-box;
-
-    border: 2px solid var(--SC-RED);                         /*         цвет рамки                                                                                   */
-    border-radius: 10px;                                     /*         закругление углов (общее)                                                                    */
-    -webkit-border-radius: 10px;                             /*         закругление углов (Google Chrome)                                                            */
-    -moz-border-radius: 10px;                                /*         закругление углов (FireFox)                                                                  */
-    -khtml-border-radius: 10px;                              /*         закругление углов (Safari)                                                                   */
-    background: var(--SC-DARK);                              /*         желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым          */
-    outline: none;                                           /*         удаляет обводку в браузерах хром(желтая) и сафари(синяя)                                     */
-    height: 2.5rem;                                          /*         высота на свое усмотрение                                                                    */
-    width: 100%;                                             /*         ширина на свое усмотрение                                                                    */
-    color: var(--SC-RED);                                    /*         цвет шрифта в обычном состоянии                                                              */
-    font-size: 1rem;                                         /*         Размер шрифта                                                                                */
+    padding: 0.5rem;                                                   /*                     Внутренние отступы элемента                                                                  */
+    box-sizing: border-box;                                            /*                     Контейнер с гибким распределением элементов                                                  */
+    border: 0.17rem solid var(--SC-RED);                               /*                     Граница для элемента и цвет границы                                                          */
+    border-radius: 0.625rem;                                           /*                     Закругление углов (общее)                                                                    */
+    -webkit-border-radius: 0.625rem;                                   /*                     Закругление углов (Google Chrome)                                                            */
+    -moz-border-radius: 0.625rem;                                      /*                     Закругление углов (FireFox)                                                                  */
+    -khtml-border-radius: 0.625rem;                                    /*                     Закругление углов (Safari)                                                                   */
+    box-shadow: 0 0 0.5rem var(--SC-RED);                              /*                     Теневой цвет элемента                                                                        */
+    background: var(--SC-DARK);                                        /*                     Желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым          */
+    outline: none;                                                     /*                     Удаляет обводку в браузерах хром(желтая) и сафари(синяя)                                     */
+    height: 2.5rem;                                                    /*                     Высота на свое усмотрение                                                                    */
+    width: 100%;                                                       /*                     Ширина на свое усмотрение                                                                    */
+    color: var(--SC-RED);                                              /*                     Цвет шрифта в обычном состоянии                                                              */
+    font-size: 1rem;                                                   /*                     Размер шрифта                                                                                */
 }
 .FORM-GROUP-1-INPUT:hover {
-    color: var(--SC-WHITE);
-    border: 1px solid var(--SC-WHITE);
+    color: var(--SC-WHITE);                                            /*                     Цвет шрифта в обычном состоянии                                                              */
+    border: 0.17rem solid var(--SC-WHITE);                             /*                     Граница для элемента и цвет границы                                                          */
 }
 .FORM-GROUP-1-INPUT:focus {
-    color: var(--SC-WHITE);
-    border: 1px solid var(--SC-WHITE);
+    color: var(--SC-WHITE);                                            /*                     Цвет шрифта в обычном состоянии                                                              */
+    border: 0.17rem solid var(--SC-WHITE);                             /*                     Граница для элемента и цвет границы                                                          */
 }
-::PLACEHOLDER {
-    color: var(--SC-RED);
-    opacity: 0.5;                                            /*        Firefox                                                                                       */
+.FORM-GROUP-1-INPUT::PLACEHOLDER {
+    color: var(--SC-RED);                                              /*                     Цвет шрифта в обычном состоянии                                                              */
+    opacity: 0.5;                                                      /*                     Прозрачность                                                                                 */
 }
-::-MS-INPUT-PLACEHOLDER {                                    /*        Edge 12 -18                                                                                   */
-    color: var(--SC-RED);
+.FORM-GROUP-1-INPUT::-MS-INPUT-PLACEHOLDER {
+    color: var(--SC-RED);                                              /*                     Цвет шрифта в обычном состоянии                                                              */
 }
 .FORM-GROUP-1-BUTTON{
-    padding: 0.5rem;
-    box-sizing: border-box;
-    border: 2px solid var(--SC-WHITE);                        /*         цвет рамки                                                                                   */
-    border-radius: 10px;                                     /*         закругление углов (общее)                                                                    */
-    -webkit-border-radius: 10px;                             /*         закругление углов (Google Chrome)                                                            */
-    -moz-border-radius: 10px;                                /*         закругление углов (FireFox)                                                                  */
-    -khtml-border-radius: 10px;                              /*         закругление углов (Safari)                                                                   */
-    background: var(--SC-DARK);                              /*         желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым          */
-    outline: none;                                           /*         удаляет обводку в браузерах хром(желтая) и сафари(синяя)                                     */
-    height: 2.5rem;                                          /*         высота на свое усмотрение                                                                    */
-    width: 100%;                                             /*         ширина на свое усмотрение                                                                    */
-    color: var(--SC-WHITE);                                   /*         цвет шрифта в обычном состоянии                                                              */
-    font-size: 1rem;                                         /*         Размер шрифта                                                                                */
-
-    opacity: 1;
-    cursor: pointer;
-    margin-bottom: 10px;
+    padding: 0.5rem;                                                   /*                     Внутренние отступы элемента                                                                  */
+    box-sizing: border-box;                                            /*                     Контейнер с гибким распределением элементов                                                  */
+    border: 0.17rem solid var(--SC-RED);                               /*                     Граница для элемента и цвет границы                                                          */
+    border-radius: 0.625rem;                                           /*                     Закругление углов (общее)                                                                    */
+    -webkit-border-radius: 0.625rem;                                   /*                     Закругление углов (Google Chrome)                                                            */
+    -moz-border-radius: 0.625rem;                                      /*                     Закругление углов (FireFox)                                                                  */
+    -khtml-border-radius: 0.625rem;                                    /*                     Закругление углов (Safari)                                                                   */
+    background: var(--SC-DARK-BROWN-WM-INTENSITY);                     /*                     Желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым          */
+    outline: none;                                                     /*                     Удаляет обводку в браузерах хром(желтая) и сафари(синяя)                                     */
+    height: 2.5rem;                                                    /*                     Высота на свое усмотрение                                                                    */
+    width: 100%;                                                       /*                     Ширина на свое усмотрение                                                                    */
+    color: var(--SC-WHITE);                                            /*                     Цвет шрифта в обычном состоянии                                                              */
+    font-size: 1rem;                                                   /*                     Размер шрифта                                                                                */
+    box-shadow: 0 0 0.5rem var(--SC-RED);                              /*                     Теневой цвет элемента                                                                        */
+    opacity: 1;                                                        /*                     Прозрачность                                                                                 */
+    cursor: pointer;                                                   /*                     Курсор                                                                                       */
+    margin-bottom: 0.625rem;                                           /*                     Внешние отступы элемента                                                                     */
 }
 .FORM-GROUP-1-BUTTON:hover {
-    animation: ease-out;
-    background-color: var(--SC-RED);
-    box-shadow: 0 0 0 2px var(--SC-WHITE);
-    opacity: 1;
+    border: 0.17rem solid var(--SC-WHITE);                             /*                     Граница для элемента и цвет границы                                                          */
+    background: var(--SC-RED);                                         /*                     Желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым          */
+    box-shadow: 0 0 0.5rem var(--SC-RED);                              /*                     Теневой цвет элемента                                                                        */
+    opacity: 1;                                                        /*                     Прозрачность                                                                                 */
 }
-
 .SEPARATOR {
-    margin: 15px 0;
-    border-bottom: 2px solid var(--SC-WHITE);
-    position: relative;
+    margin: 0.9375rem 0;                                               /*                     Внешние отступы элемента                                                                     */
+    border-bottom: 0.125rem solid var(--SC-WHITE);                     /*                     Граница для элемента и цвет границы                                                          */
+    position: relative;                                                /*                     позиционирование элемента относительно его исходного положения                               */
 }
 .LINK-REGISTER, .LINK-FORGOT-PASSWORD{
-    color: var(--SC-WHITE);
-    text-decoration: none;
-    display: block;
-    margin-top: 10px;
-    font-size: 0.7rem;
+    color: var(--SC-WHITE);                                            /*                     Цвет шрифта в обычном состоянии                                                              */
+    text-decoration: none;                                             /*                     Шрифта обычном состоянии без декораций                                                       */
+    display: block;                                                    /*                     Контейнер с блочным распределением элементов                                                 */
+    margin-top: 0.625rem;                                              /*                     Внешние отступы элемента                                                                     */
+    font-size: 0.7rem;                                                 /*                     Размер шрифта                                                                                */
 }
 .LINK-FORGOT-PASSWORD {
-    text-align: right;
+    text-align: right;                                                 /*                     Выравнивание текста внутри элемента                                                          */
 }
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /*----------------------------------------------------------------------------------------------------------I_EFFECTS_I--------------------------------------------------------------------------------------------------------*/
