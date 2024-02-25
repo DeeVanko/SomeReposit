@@ -55,6 +55,7 @@ body{
     -khtml-border-radius: 0.625rem;                                    /*                     Закругление углов (Safari)                                                                   */
     box-shadow: 0 0 0.5rem var(--SC-RED);                              /*                     Теневой цвет элемента                                                                        */
     background: var(--SC-DARK);                                        /*                     Желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым          */
+    background-color: var(--SC-DARK-BROWN-WL-INTENSITY);               /*                     Цвет заднего фона                                                                            */
     outline: none;                                                     /*                     Удаляет обводку в браузерах хром(желтая) и сафари(синяя)                                     */
     height: 2.5rem;                                                    /*                     Высота на свое усмотрение                                                                    */
     width: 100%;                                                       /*                     Ширина на свое усмотрение                                                                    */
