@@ -13,11 +13,11 @@
     <style>
         :root{
             --SC-RED:#ff0000;                      /*        var(--SC-RED);          */
-            --SC-DARK:#0a120b;                     /*        var(--SC-DARK);         */
+            --SC-DARK:#000a14;                     /*        var(--SC-DARK);         */
             --SC-WHITE:#ffffff;                    /*        var(--SC-WHITE);        */
             --SC-ORANGE:#ff7300;                   /*        var(--SC-ORANGE);       */
             --SC-YELLOW:#f6ff00;                   /*        var(--SC-YELLOW);       */
-            --SC-WHITE:#ffffff;                    /*        var(--SC-WHITE);        */
+            --SC-GRAY:#adadad;                     /*        var(--SC-GRAY);         */
         }
         body {
             font-family: Arial, sans-serif;
@@ -92,7 +92,7 @@
         .form-group button {
             padding: 0.5rem;
             box-sizing: border-box;
-            border: 2px solid var(--SC-WHITE);                       /*         цвет рамки                                                                                   */
+            border: 2px solid var(--SC-GRAY);                        /*         цвет рамки                                                                                   */
             border-radius: 10px;                                     /*         закругление углов (общее)                                                                    */
             -webkit-border-radius: 10px;                             /*         закругление углов (Google Chrome)                                                            */
             -moz-border-radius: 10px;                                /*         закругление углов (FireFox)                                                                  */
@@ -101,10 +101,10 @@
             outline: none;                                           /*         удаляет обводку в браузерах хром(желтая) и сафари(синяя)                                     */
             height: 2.5rem;                                          /*         высота на свое усмотрение                                                                    */
             width: 100%;                                             /*         ширина на свое усмотрение                                                                    */
-            color: var(--SC-WHITE);                                  /*         цвет шрифта в обычном состоянии                                                              */
+            color: var(--SC-GRAY);                                   /*         цвет шрифта в обычном состоянии                                                              */
             font-size: 1rem;                                         /*         Размер шрифта                                                                                */
 
-            opacity: 0.5;
+            opacity: 1;
             cursor: pointer;
             margin-bottom: 10px;
         }
@@ -118,13 +118,13 @@
 
         .separator {
             margin: 15px 0;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid var(--SC-GRAY);
             position: relative;
         }
 
         .register-link,
         .forgot-password-link {
-            color: #888888;
+            color: var(--SC-GRAY);
             text-decoration: none;
             display: block;
             margin-top: 10px;
