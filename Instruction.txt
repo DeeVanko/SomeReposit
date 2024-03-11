@@ -4,8 +4,15 @@ git commit -m "Ваше сообщение коммита здесь"
 git push origin LEARN
 
 
+
 ================================   Взять все актуальные данные из удаленного репозитория   ================================
 cd /Users/adilkhanaltynbek/Desktop/<<< AGC >>>/<<< FRONT-END >>>/ASSIGMENT_1/OdynXBET-WebAPP
 git pull origin LEARN
 git add .
 git merge --continue
+
+
+
+================================   VUE3   ================================
+cd app
+npm run serve
