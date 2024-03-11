@@ -15,5 +15,6 @@ git merge --continue
 
 
 ================================   VUE3   ================================
+cd OdynXBET-WebAPP
 cd WebApplicaton
 npm run serve
