@@ -1,4 +1,5 @@
 ================================   Добавить актуальные данные в удаленный репозиторий   ================================
+cd OdynXBET-WebAPP
 git add .
 git commit -m "Ваше сообщение коммита здесь"
 git push origin LEARN
@@ -6,7 +7,7 @@ git push origin LEARN
 
 
 ================================   Взять все актуальные данные из удаленного репозитория   ================================
-cd /Users/adilkhanaltynbek/Desktop/<<< AGC >>>/<<< FRONT-END >>>/ASSIGMENT_1/OdynXBET-WebAPP
+cd OdynXBET-WebAPP
 git pull origin LEARN
 git add .
 git merge --continue
@@ -14,5 +15,5 @@ git merge --continue
 
 
 ================================   VUE3   ================================
-cd app
+cd WebApplicaton
 npm run serve
