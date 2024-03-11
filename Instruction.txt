@@ -18,3 +18,10 @@ git merge --continue
 cd OdynXBET-WebAPP
 cd WebApplicaton
 npm run serve
+
+
+
+================================   ROUTER   ================================
+npm install vue-router
+mkdir src/router
+touch src/router/index.js

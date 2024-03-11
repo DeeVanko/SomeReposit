@@ -25,7 +25,7 @@
     </div>
 
     <div class="SEPARATOR"></div>
-    <a class="LINK-REGISTER" href="Registration.html">Register</a>
+    <router-link to="/registration" class="LINK-REGISTER">Register</router-link>
   </div>
 </template>
 

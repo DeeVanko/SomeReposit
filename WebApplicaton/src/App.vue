@@ -1,20 +1,13 @@
 <template>
   <div>
-    <Login/>
-    <!--       <Registration/>       -->
+    <router-view />
   </div>
 </template>
 
 <script>
-import Login from './components/LoginComponent.vue';
-// import Registration from './components/RegistrationComponent.vue';
 export default {
-  components: {
-    Login
-  }
-}
+  name: 'App',
+};
 </script>
 
-<style>
-/* Ваши глобальные стили */
-</style>
+<style></style>

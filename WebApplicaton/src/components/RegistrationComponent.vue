@@ -21,7 +21,7 @@
     </div>
 
     <div class="SEPARATOR"></div>
-    <a class="LINK-LOGIN" href="Login.html">Login</a>
+    <router-link to="/login" class="LINK-LOGIN">Login</router-link>
   </div>
 </template>
 
