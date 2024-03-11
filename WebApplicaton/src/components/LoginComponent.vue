@@ -21,7 +21,7 @@
     </div>
 
     <div class="FORM-GROUP-1">
-      <button class="FORM-GROUP-1-BUTTON" type="button" onclick="loginUser()">Login</button>
+      <button class="FORM-GROUP-1-BUTTON" type="button" @click="loginUser()">Login</button>
     </div>
 
     <div class="SEPARATOR"></div>
@@ -31,10 +31,17 @@
 
 
 <script>
+import '@/assets/JS-FOR-ALL.js';
+import {loginUser} from '@/assets/JS-FOR-ALL.js';
 export default {
+  mounted() {
+    // Вызовите функции из внешнего JavaScript-файла
+    loginUser();
+  },
   methods: {
     loginUser() {
-      // Ваша логика для обработки входа пользователя
+      // Вызовите функцию из внешнего JavaScript-файла
+      loginUser();
     }
   }
 }
