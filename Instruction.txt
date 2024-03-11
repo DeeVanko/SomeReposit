@@ -8,10 +8,8 @@ git push origin LEARN
 
 ================================   Взять все актуальные данные из удаленного репозитория   ================================
 cd OdynXBET-WebAPP
-git pull origin LEARN
-git add .
-git merge --continue
-
+git fetch origin
+git reset --hard origin/LEARN
 
 
 ================================   VUE3   ================================
@@ -39,5 +37,3 @@ touch src/router/index.js
         (Элементы: Компоненты отображение)
         > App.vue
         > main.js
-                    >
-                            >
