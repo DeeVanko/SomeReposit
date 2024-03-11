@@ -48,5 +48,5 @@ export default {
 </script>
 
 <style scoped>
-@import './CSS-FOR-ALL.css';
+@import '@/assets/CSS-FOR-ALL.css';
 </style>
