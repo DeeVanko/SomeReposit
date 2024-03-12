@@ -5,20 +5,177 @@
                 <span class="material-symbols-outlined">home_app_logo</span>
                 <span class="TAG">Home</span>
             </div>
-            <div class="SECOND-LINE-ITEMS">
-                <div class="SECOND-LINE-ITEM">
+            <div class="THIRD-LINE-ITEMS">
+                <div class="THIRD-LINE-ITEM">
                     <a href="">
                         <span class="material-symbols-outlined">key_vertical</span>
                         <span class="TAG">Key</span>
                     </a>
                 </div>
-                <div class="SECOND-LINE-ITEM">
+                <div class="THIRD-LINE-ITEM">
                     <a href="">
                         <span class="material-symbols-outlined">key_vertical</span>
                         <span class="TAG">Key</span>
                     </a>
                 </div>
-                <div class="SECOND-LINE-ITEM">
+                <div class="THIRD-LINE-ITEM">
+                    <a href="">
+                        <span class="material-symbols-outlined">key_vertical</span>
+                        <span class="TAG">Key</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="LINE-ITEM">
+            <div class="FIRST-LINE-ITEM">
+                <span class="material-symbols-outlined">home_app_logo</span>
+                <span class="TAG">Home</span>
+            </div>
+            <div class="THIRD-LINE-ITEMS">
+                <div class="THIRD-LINE-ITEM">
+                    <a href="">
+                        <span class="material-symbols-outlined">key_vertical</span>
+                        <span class="TAG">Key</span>
+                    </a>
+                </div>
+                <div class="THIRD-LINE-ITEM">
+                    <a href="">
+                        <span class="material-symbols-outlined">key_vertical</span>
+                        <span class="TAG">Key</span>
+                    </a>
+                </div>
+                <div class="THIRD-LINE-ITEM">
+                    <a href="">
+                        <span class="material-symbols-outlined">key_vertical</span>
+                        <span class="TAG">Key</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="LINE-ITEM">
+            <div class="FIRST-LINE-ITEM">
+                <span class="material-symbols-outlined">home_app_logo</span>
+                <span class="TAG">Home</span>
+            </div>
+            <div class="THIRD-LINE-ITEMS">
+                <div class="THIRD-LINE-ITEM">
+                    <a href="">
+                        <span class="material-symbols-outlined">key_vertical</span>
+                        <span class="TAG">Key</span>
+                    </a>
+                </div>
+                <div class="THIRD-LINE-ITEM">
+                    <a href="">
+                        <span class="material-symbols-outlined">key_vertical</span>
+                        <span class="TAG">Key</span>
+                    </a>
+                </div>
+                <div class="THIRD-LINE-ITEM">
+                    <a href="">
+                        <span class="material-symbols-outlined">key_vertical</span>
+                        <span class="TAG">Key</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="LINE-ITEM">
+            <div class="FIRST-LINE-ITEM">
+                <span class="material-symbols-outlined">home_app_logo</span>
+                <span class="TAG">Home</span>
+            </div>
+            <div class="THIRD-LINE-ITEMS">
+                <div class="THIRD-LINE-ITEM">
+                    <a href="">
+                        <span class="material-symbols-outlined">key_vertical</span>
+                        <span class="TAG">Key</span>
+                    </a>
+                </div>
+                <div class="THIRD-LINE-ITEM">
+                    <a href="">
+                        <span class="material-symbols-outlined">key_vertical</span>
+                        <span class="TAG">Key</span>
+                    </a>
+                </div>
+                <div class="THIRD-LINE-ITEM">
+                    <a href="">
+                        <span class="material-symbols-outlined">key_vertical</span>
+                        <span class="TAG">Key</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="flex"></div>
+        <div class="LINE-ITEM">
+            <div class="FIRST-LINE-ITEM">
+                <span class="material-symbols-outlined">home_app_logo</span>
+                <span class="TAG">Home</span>
+            </div>
+            <div class="THIRD-LINE-ITEMS">
+                <div class="THIRD-LINE-ITEM">
+                    <a href="">
+                        <span class="material-symbols-outlined">key_vertical</span>
+                        <span class="TAG">Key</span>
+                    </a>
+                </div>
+                <div class="THIRD-LINE-ITEM">
+                    <a href="">
+                        <span class="material-symbols-outlined">key_vertical</span>
+                        <span class="TAG">Key</span>
+                    </a>
+                </div>
+                <div class="THIRD-LINE-ITEM">
+                    <a href="">
+                        <span class="material-symbols-outlined">key_vertical</span>
+                        <span class="TAG">Key</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="LINE-ITEM">
+            <div class="FIRST-LINE-ITEM">
+                <span class="material-symbols-outlined">home_app_logo</span>
+                <span class="TAG">Home</span>
+            </div>
+            <div class="THIRD-LINE-ITEMS">
+                <div class="THIRD-LINE-ITEM">
+                    <a href="">
+                        <span class="material-symbols-outlined">key_vertical</span>
+                        <span class="TAG">Key</span>
+                    </a>
+                </div>
+                <div class="THIRD-LINE-ITEM">
+                    <a href="">
+                        <span class="material-symbols-outlined">key_vertical</span>
+                        <span class="TAG">Key</span>
+                    </a>
+                </div>
+                <div class="THIRD-LINE-ITEM">
+                    <a href="">
+                        <span class="material-symbols-outlined">key_vertical</span>
+                        <span class="TAG">Key</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="LINE-ITEM">
+            <div class="FIRST-LINE-ITEM">
+                <span class="material-symbols-outlined">home_app_logo</span>
+                <span class="TAG">Home</span>
+            </div>
+            <div class="THIRD-LINE-ITEMS">
+                <div class="THIRD-LINE-ITEM">
+                    <a href="">
+                        <span class="material-symbols-outlined">key_vertical</span>
+                        <span class="TAG">Key</span>
+                    </a>
+                </div>
+                <div class="THIRD-LINE-ITEM">
+                    <a href="">
+                        <span class="material-symbols-outlined">key_vertical</span>
+                        <span class="TAG">Key</span>
+                    </a>
+                </div>
+                <div class="THIRD-LINE-ITEM">
                     <a href="">
                         <span class="material-symbols-outlined">key_vertical</span>
                         <span class="TAG">Key</span>
