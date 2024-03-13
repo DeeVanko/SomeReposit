@@ -16,24 +16,3 @@ git reset --hard origin/LEARN
 cd OdynXBET-WebAPP
 cd WebApplicaton
 npm run serve
-
-
-
-================================   ROUTER   ================================
-npm install vue-router
-mkdir src/router
-touch src/router/index.js
-
-
-
-================================   LEARN   ================================
-> WebApplicaton
-    > public
-        (Элемент: index.html к которому будет подключаться App.vue )
-    > src
-        > assets
-        (Элементы: Стили(CSS), Картинки и Логотипы)
-        > components
-        (Элементы: Компоненты отображение)
-        > App.vue
-        > main.js

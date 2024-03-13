@@ -1,192 +1,36 @@
 <template>
     <aside class="NAVBAR">
-        <div class="LINE-ITEM">
-            <div class="FIRST-LINE-ITEM">
-                <span class="material-symbols-outlined">home_app_logo</span>
-                <span class="TAG">Home</span>
-            </div>
-            <div class="THIRD-LINE-ITEMS">
-                <div class="THIRD-LINE-ITEM">
-                    <a href="">
-                        <span class="material-symbols-outlined">key_vertical</span>
-                        <span class="TAG">Key</span>
-                    </a>
-                </div>
-                <div class="THIRD-LINE-ITEM">
-                    <a href="">
-                        <span class="material-symbols-outlined">key_vertical</span>
-                        <span class="TAG">Key</span>
-                    </a>
-                </div>
-                <div class="THIRD-LINE-ITEM">
-                    <a href="">
-                        <span class="material-symbols-outlined">key_vertical</span>
-                        <span class="TAG">Key</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="LINE-ITEM">
-            <div class="FIRST-LINE-ITEM">
-                <span class="material-symbols-outlined">home_app_logo</span>
-                <span class="TAG">Home</span>
-            </div>
-            <div class="THIRD-LINE-ITEMS">
-                <div class="THIRD-LINE-ITEM">
-                    <a href="">
-                        <span class="material-symbols-outlined">key_vertical</span>
-                        <span class="TAG">Key</span>
-                    </a>
-                </div>
-                <div class="THIRD-LINE-ITEM">
-                    <a href="">
-                        <span class="material-symbols-outlined">key_vertical</span>
-                        <span class="TAG">Key</span>
-                    </a>
-                </div>
-                <div class="THIRD-LINE-ITEM">
-                    <a href="">
-                        <span class="material-symbols-outlined">key_vertical</span>
-                        <span class="TAG">Key</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="LINE-ITEM">
-            <div class="FIRST-LINE-ITEM">
-                <span class="material-symbols-outlined">home_app_logo</span>
-                <span class="TAG">Home</span>
-            </div>
-            <div class="THIRD-LINE-ITEMS">
-                <div class="THIRD-LINE-ITEM">
-                    <a href="">
-                        <span class="material-symbols-outlined">key_vertical</span>
-                        <span class="TAG">Key</span>
-                    </a>
-                </div>
-                <div class="THIRD-LINE-ITEM">
-                    <a href="">
-                        <span class="material-symbols-outlined">key_vertical</span>
-                        <span class="TAG">Key</span>
-                    </a>
-                </div>
-                <div class="THIRD-LINE-ITEM">
-                    <a href="">
-                        <span class="material-symbols-outlined">key_vertical</span>
-                        <span class="TAG">Key</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="LINE-ITEM">
-            <div class="FIRST-LINE-ITEM">
-                <span class="material-symbols-outlined">home_app_logo</span>
-                <span class="TAG">Home</span>
-            </div>
-            <div class="THIRD-LINE-ITEMS">
-                <div class="THIRD-LINE-ITEM">
-                    <a href="">
-                        <span class="material-symbols-outlined">key_vertical</span>
-                        <span class="TAG">Key</span>
-                    </a>
-                </div>
-                <div class="THIRD-LINE-ITEM">
-                    <a href="">
-                        <span class="material-symbols-outlined">key_vertical</span>
-                        <span class="TAG">Key</span>
-                    </a>
-                </div>
-                <div class="THIRD-LINE-ITEM">
-                    <a href="">
-                        <span class="material-symbols-outlined">key_vertical</span>
-                        <span class="TAG">Key</span>
-                    </a>
-                </div>
-            </div>
-        </div>
+        <NavigationSystem1/>
+        <NavigationSystem2/>
+        <NavigationSystem3/>
+        <NavigationSystem4/>
+        <NavigationSystem5/>
+        <NavigationSystem6/>
         <div class="flex"></div>
-        <div class="LINE-ITEM">
-            <div class="FIRST-LINE-ITEM">
-                <span class="material-symbols-outlined">home_app_logo</span>
-                <span class="TAG">Home</span>
-            </div>
-            <div class="THIRD-LINE-ITEMS">
-                <div class="THIRD-LINE-ITEM">
-                    <a href="">
-                        <span class="material-symbols-outlined">key_vertical</span>
-                        <span class="TAG">Key</span>
-                    </a>
-                </div>
-                <div class="THIRD-LINE-ITEM">
-                    <a href="">
-                        <span class="material-symbols-outlined">key_vertical</span>
-                        <span class="TAG">Key</span>
-                    </a>
-                </div>
-                <div class="THIRD-LINE-ITEM">
-                    <a href="">
-                        <span class="material-symbols-outlined">key_vertical</span>
-                        <span class="TAG">Key</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="LINE-ITEM">
-            <div class="FIRST-LINE-ITEM">
-                <span class="material-symbols-outlined">home_app_logo</span>
-                <span class="TAG">Home</span>
-            </div>
-            <div class="THIRD-LINE-ITEMS">
-                <div class="THIRD-LINE-ITEM">
-                    <a href="">
-                        <span class="material-symbols-outlined">key_vertical</span>
-                        <span class="TAG">Key</span>
-                    </a>
-                </div>
-                <div class="THIRD-LINE-ITEM">
-                    <a href="">
-                        <span class="material-symbols-outlined">key_vertical</span>
-                        <span class="TAG">Key</span>
-                    </a>
-                </div>
-                <div class="THIRD-LINE-ITEM">
-                    <a href="">
-                        <span class="material-symbols-outlined">key_vertical</span>
-                        <span class="TAG">Key</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="LINE-ITEM">
-            <div class="FIRST-LINE-ITEM">
-                <span class="material-symbols-outlined">home_app_logo</span>
-                <span class="TAG">Home</span>
-            </div>
-            <div class="THIRD-LINE-ITEMS">
-                <div class="THIRD-LINE-ITEM">
-                    <a href="">
-                        <span class="material-symbols-outlined">key_vertical</span>
-                        <span class="TAG">Key</span>
-                    </a>
-                </div>
-                <div class="THIRD-LINE-ITEM">
-                    <a href="">
-                        <span class="material-symbols-outlined">key_vertical</span>
-                        <span class="TAG">Key</span>
-                    </a>
-                </div>
-                <div class="THIRD-LINE-ITEM">
-                    <a href="">
-                        <span class="material-symbols-outlined">key_vertical</span>
-                        <span class="TAG">Key</span>
-                    </a>
-                </div>
-            </div>
-        </div>
+        <NavigationSystem7/>
+        <NavigationSystemSettings/>
+        <NavigationSystemUser/>
     </aside>
 </template>
 
-
+<script>
+import NavigationSystemSettings from '@/NavigationSystemComponents/NavigationSystem-Settings.vue';
+import NavigationSystemUser from '@/NavigationSystemComponents/NavigationSystem-User.vue';
+import NavigationSystem1 from '@/NavigationSystemComponents/NavigationSystem-1.vue';
+import NavigationSystem2 from '@/NavigationSystemComponents/NavigationSystem-2.vue';
+import NavigationSystem3 from '@/NavigationSystemComponents/NavigationSystem-3.vue';
+import NavigationSystem4 from '@/NavigationSystemComponents/NavigationSystem-4.vue';
+import NavigationSystem5 from '@/NavigationSystemComponents/NavigationSystem-5.vue';
+import NavigationSystem6 from '@/NavigationSystemComponents/NavigationSystem-6.vue';
+import NavigationSystem7 from '@/NavigationSystemComponents/NavigationSystem-7.vue';
+export default {
+  components: {
+    NavigationSystemSettings,
+    NavigationSystemUser,
+    NavigationSystem1, NavigationSystem2, NavigationSystem3, NavigationSystem4, NavigationSystem5, NavigationSystem6, NavigationSystem7
+  }
+};
+</script>
 <style>
 /* Ваши стили компонента Vue */
 .NAVBAR {
@@ -266,7 +110,7 @@
             display: block;
             text-transform: uppercase;
         }
-        .LINE-ITEM a {
+        .Rout, .LINE-ITEM a{
             display: block;
             height: 100%;
             text-decoration: none;

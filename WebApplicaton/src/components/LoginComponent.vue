@@ -17,7 +17,7 @@
     </div>
 
     <div class="FORM-GROUP-1">
-      <a class="LINK-FORGOT-PASSWORD" href="NAVBAR.html">Forgot Password</a>
+      <router-link to="/Main" class="LINK-FORGOT-PASSWORD">Forgot Password</router-link>
     </div>
 
     <div class="FORM-GROUP-1">
