@@ -1,22 +1,23 @@
+{% load static %}
 <!DOCTYPE HTML>
 <HTML lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Подключаем CSS файл Bootstrap -->
-    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href= "{% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet"> 
     <!-- Подключаем файлы JavaScript для некоторых компонентов и интерактивности -->
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
     <title>Bootstrap learn</title>
 </head>
   <body>
     <!-- Фиксированный навигация -->
-    <nav class="navbar navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-dark bg-dark fixed-top">      
         <!-- Контейнер с полным охватом -->
         <div class="container-fluid">
             <!-- Ссылочное лого -->
             <a class="navbar-brand" href="#">
-                <img src="/IMG/404.png" alt="Logo" width="40" height="30" class="d-inline-block align-text-top">
+                <img src="{% static 'IMG/error.jfif' %}" alt="Logo" width="40" height="30" class="d-inline-block align-text-top">
                 CORP
             </a>
             <!-- Ссылочное кнопка -->
