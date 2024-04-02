@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <! CSS —>
-    <link rel='stylesheet' href='IMG/CSS-FOR-ALL.css'>
+    <link rel='stylesheet' href="{% static 'IMG/CSS-FOR-ALL.css' %}">
 
     <! WEB TITLE —>
     <title>Registration-Page</title>
@@ -15,7 +16,7 @@
 <body>
 
 <DIV CLASS = "CONTEINER-RP">
-    <IMG ID = "IMG-LOGO" SRC = "IMG/OdynXBET-logo.png">
+    <IMG ID = "IMG-LOGO" SRC = "{% static 'IMG/OdynXBET-logo.png' %}">
 
 
     <DIV CLASS = "FORM-GROUP-2">
@@ -41,11 +42,12 @@
     </DIV>
 
 
-    <DIV CLASS = "SEPARATOR"></DIV>
-    <A CLASS = "LINK-LOGIN" HREF = "Login.html">Login</A>
-</DIV>
+    <div class="SEPARATOR"></div>
+<a class="LINK-LOGIN" href="{% url 'login' %}">Login</a>
 
-<script src="IMG/JS-FOR-ALL.js"></script>
+
+
+<script src="{% static 'IMG/JS-FOR-ALL.js' %}"></script>
 
 </body>
 </html>
