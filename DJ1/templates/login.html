@@ -46,6 +46,16 @@
         <BUTTON CLASS = "FORM-GROUP-1-BUTTON" TYPE = "BUTTON" ONCLICK = "loginUser()">Login</BUTTON>
     </DIV>
 
+    <!-- login.html -->
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+</form>
+{% if form.errors %}
+    <p>{{ form.errors }}</p>
+{% endif %}
+
 
     <div class="SEPARATOR"></div>
 <a class="LINK-REGISTER" href="{% url 'registration' %}">Register</a>
