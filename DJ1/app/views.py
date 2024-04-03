@@ -26,5 +26,5 @@ def handleregistration (request):
     #return render(request, 'registration/register.html', {'form': form})
     return render(request, 'registration.html', {'form': form})
 
-    # form = UserRegistrationForm()
+  
 
