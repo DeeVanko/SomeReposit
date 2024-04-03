@@ -126,10 +126,6 @@ function loginUser() {
         CORRECT_CONTEINER_USERNAME();
         CORRECT_CONTEINER_PASSWORD();
         // NEW WINDOW
-        setTimeout(function () {
-            window.location.href = 'index.html';
-            // 1000 ms = 1s 
-        }, 1000);
     }
     // FALSE FALSE FALSE
     else if (password.length >= 1 && password.length < 8 && username.length >= 1 && username.length < 8) {
@@ -212,7 +208,7 @@ function registerUser() {
         CORRECT_CONTEINER_PASSWORD();
         // NEW WINDOW
         setTimeout(function () {
-            window.location.href = 'index.html';
+            window.location.href = 'NAVBAR.html';
             // 1000 ms = 1s 
         }, 1000);
     }
