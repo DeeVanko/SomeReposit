@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <! CSS —>
+    <!--CSS--> 
     <link rel='stylesheet' href="{% static 'IMG/CSS-FOR-ALL.css' %}">
 
-    <! WEB TITLE —>
+    <!--WEB TITLE-->
     <title>Registration-Page</title>
 
 </head>
@@ -37,7 +37,7 @@
     </DIV>
 
 
-    <form method="post">
+    <form CLASS = "FORM-GROUP-2-INPUT" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Register</button>
