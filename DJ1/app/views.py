@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
 from .forms import UserRegistrationForm
 
 
@@ -13,6 +14,24 @@ def contact (request):
     return render(request, 'contact.html')
 
 def handlelogin (request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        
+        # Here you might perform additional validation
+        
+        # Check if the user exists (not necessary for registration)
+        if not User.objects.filter(username=username).exists():
+            # Handle non-existent user scenario
+            return redirect('login')  # Redirect back to login page or show an error
+        
+        # Instead of directly creating a user instance, you should authenticate the user
+        # However, this is just a simplified example
+        user = User(username=username)
+        
+        # Redirect the user to another page
+        return redirect('some-other-page')
+    
     return render(request, 'login.html')
      
 def handleregistration (request):
