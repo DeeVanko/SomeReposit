@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from .forms import UserRegistrationForm
 from .forms import RailwayAuthenticationForm
+from .models import CustomUser
 
 def index(request):
     return render(request, 'index.html')
@@ -25,14 +26,17 @@ def handlelogin(request):
 
     
 def handleregistration(request):
-    if request.method == 'POST':
-        form = UserRegistrationForm(request.POST)
-        if form.is_valid():
-            user = form.save()  # Save the user object returned by form.save()
-            # You might want to log the user in automatically after registration
-            # This can be done using Django's authentication system
-            # For example: login(request, user)
-            return redirect('login')  # Redirect to login page after successful registration
-    else:
-        form = UserRegistrationForm()
-    return render(request, 'registration.html', {'form': form})
+        if request.method == 'POST':
+            form = UserRegistrationForm(request.POST)
+            if form.is_valid():
+                username = form.cleaned_data['username']
+                password = form.cleaned_data['password1']
+                user_type = form.cleaned_data['user_type']
+
+            # Create a new CustomUser object and save it to the database
+                new_user = CustomUser.objects.create_user(username=username, password=password, user_type=user_type)
+
+                return redirect('login')  # Redirect to the login page after successful registration
+        else:
+            form = UserRegistrationForm()
+        return render(request, 'registration.html', {'form': form})

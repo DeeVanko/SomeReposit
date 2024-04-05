@@ -3,13 +3,19 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 
-
 class UserRegistrationForm(UserCreationForm):
-    email = forms.EmailField()
+    USER_TYPE_CHOICES = [
+        ('translator', 'Translator'),
+        ('project_manager', 'Project Manager'),
+        ('chief_editor', 'Chief Editor'),
+    ]
+
+    user_type = forms.ChoiceField(choices=USER_TYPE_CHOICES)
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = ['username', 'password1', 'password2', 'user_type']
+
 
 
 class RailwayAuthenticationForm(forms.Form):
