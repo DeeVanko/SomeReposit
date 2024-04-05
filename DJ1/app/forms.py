@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, get_user_model
 
 class UserRegistrationForm(UserCreationForm):
     USER_TYPE_CHOICES = [
@@ -17,8 +17,7 @@ class UserRegistrationForm(UserCreationForm):
         fields = ['username', 'password1', 'password2', 'user_type']
 
 
-
-class RailwayAuthenticationForm(forms.Form):
+class CustomAuthenticationForm(forms.Form):
     username = forms.CharField(label='Username')
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
 
@@ -31,3 +30,6 @@ class RailwayAuthenticationForm(forms.Form):
             if user is None:
                 raise forms.ValidationError('Invalid username or password.')
         return cleaned_data
+
+
+
