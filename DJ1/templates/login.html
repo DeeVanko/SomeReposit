@@ -5,62 +5,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <! CSS —>
-    <link rel='stylesheet' href="{% static 'IMG/CSS-FOR-ALL.css' %}">
-
-    <! WEB TITLE —>
+    <!-- Подключаем CSS файл Bootstrap и CSS -->
+    <link href= "{% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">  
+    <link href= "{% static 'IMG/Need-File-CSS.CSS' %}" rel="stylesheet">
+    <!-- Подключаем Google Fonts и Icons-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <!-- Подключаем файлы JavaScript для некоторых компонентов и интерактивности -->
+    <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
     <title>Login-Page</title>
-
 </head>
 <body>
 
-<DIV CLASS = "CONTEINER-LP">
-    <IMG ID = "IMG-LOGO" SRC = "{% static 'IMG/OdynXBET-logo.png' %}">
-
-
-    <DIV CLASS = "FORM-GROUP-1">
-        <LABEL CLASS = "FORM-GROUP-1-LABEL" FOR = "USERNAME">Username:</LABEL>
-        <INPUT CLASS = "FORM-GROUP-1-INPUT" TYPE = "TEXT" ID = "USERNAME" NAME = "USERNAME" REQUIRED PLACEHOLDER = "AltynbekOV04">
-
-        <DIV CLASS = "error-message" ID = "USERNAME-error"></DIV>
-        <DIV CLASS = "correct-message" ID = "USERNAME-correct"></DIV>
-    </DIV>
-
-
-    <DIV CLASS = "FORM-GROUP-1">
-        <LABEL CLASS = "FORM-GROUP-1-LABEL" FOR = "PASSWORD">Password:</LABEL>
-        <INPUT CLASS = "FORM-GROUP-1-INPUT" TYPE = "PASSWORD" ID = "PASSWORD" NAME = "PASSWORD" REQUIRED PLACEHOLDER = "Qwerty12345">
-
-        <DIV CLASS = "error-message" ID = "PASSWORD-error"></DIV>
-        <DIV CLASS = "correct-message" ID = "PASSWORD-correct"></DIV>
-    </DIV>
-
-
-    <DIV CLASS = "FORM-GROUP-1">
-        <A CLASS = "LINK-FORGOT-PASSWORD" HREF = "NAVBAR.html">Forgot Password</A>
-    </DIV>
-
-
-    <DIV CLASS = "FORM-GROUP-1">
-        <BUTTON CLASS = "FORM-GROUP-1-BUTTON" TYPE = "BUTTON" ONCLICK = "loginUser()">Login</BUTTON>
-    </DIV>
-
-    <!-- login.html -->
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-</form>
-{% if form.errors %}
-    <p>{{ form.errors }}</p>
-{% endif %}
-
-
-    <div class="SEPARATOR"></div>
-<a class="LINK-REGISTER" href="{% url 'registration' %}">Register</a>
-
-
-<script src="{% static 'IMG/JS-FOR-ALL.js' %}"></script>
+    <div class="container-md d-flex bg-dark justify-content-center align-items-center flex-column container-login">
+        <h2 class="Google-Font-Oswald">Four-Zero-Four</h2>
+    
+        <!-- login.html -->
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username</label>
+                {{ form.username }}
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                {{ form.password }}
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    
+        {% if form.errors %}
+            <div class="alert alert-danger">{{ form.errors }}</div>
+        {% endif %}
+    
+        <div class="SEPARATOR"></div> <!-- Разделитель -->
+        
+        <a class="LINK-REGISTER" href="{% url 'registration' %}">Register</a>
+    </div>
+    
 </body>
 </html>

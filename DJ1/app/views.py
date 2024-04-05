@@ -18,7 +18,7 @@ def handlelogin(request):
         form = RailwayAuthenticationForm(request.POST)
         if form.is_valid():
             # Authentication is handled in the form's clean() method
-            return redirect('about')  # Redirect to the next page upon successful login
+            return redirect('index')  # Redirect to the next page upon successful login
     else:
         form = RailwayAuthenticationForm()
     return render(request, 'login.html', {'form': form})
