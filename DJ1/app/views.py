@@ -20,8 +20,22 @@ def handlelogin(request):
     if request.method == 'POST':
         form = CustomAuthenticationForm(request.POST)
         if form.is_valid():
-            # Authentication is handled in the form's clean() method
-            return redirect('index')  # Redirect to the next page upon successful login
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                if user.user_type == 'translator':
+                    return redirect('translator_home')
+                elif user.user_type == 'project_manager':
+                    return redirect('project_manager_home')
+                elif user.user_type == 'chief_editor':
+                    return redirect('chief_editor_home')
+                # Add more user type conditions as needed
+            else:
+                # Handle invalid login
+                # Redirect back to login page or display an error message
+                pass
     else:
         form = CustomAuthenticationForm()
     return render(request, 'login.html', {'form': form})
@@ -42,3 +56,15 @@ def handleregistration(request):
         else:
             form = UserRegistrationForm()
         return render(request, 'registration.html', {'form': form})
+
+def translator_home(request):
+    # Your logic for translator home page
+    return render(request, 'translator_home.html')
+
+def project_manager_home(request):
+    # Your logic for project manager home page
+    return render(request, 'project_manager_home.html')
+
+def chief_editor_home(request):
+    # Your logic for chief editor home page
+    return render(request, 'chief_editor_home.html')
