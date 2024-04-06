@@ -29,11 +29,21 @@
     <div class="form-group">
         <label for="username">Username</label>
         {{ form.username }}
+        <br>
     </div>
+    {% for error in form.username.errors %}
+        <div class="text-danger">{{ error }}</div>
+    {% endfor %}
+    
     <div class="form-group">
         <label for="password1">Password</label>
         {{ form.password1 }}
     </div>
+    
+    {% for error in form.password1.errors %}
+        <div class="text-danger">{{ error }}</div>
+    {% endfor %}
+
     <div class="form-group">
         <label for="password2">Confirm Password</label>
         {{ form.password2 }}
@@ -42,6 +52,11 @@
         <label for="user_type">User Type</label>
         {{ form.user_type }}
     </div>
+
+
+    
+
+
     <button type="submit" class="btn btn-primary">Register</button>
 </form>
 
