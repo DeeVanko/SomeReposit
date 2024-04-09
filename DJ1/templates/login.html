@@ -62,4 +62,15 @@
     </div>
     
 </body>
+
+<script>
+    window.onload = function() {
+        if(typeof window.history.pushState == 'function') {
+            window.history.pushState({}, "Hide", '{{request.path}}');
+        }
+        window.onpopstate = function(){
+            window.location.reload();
+        }
+    }
+</script>
 </html>

@@ -48,6 +48,11 @@
         <label for="password2">Confirm Password</label>
         {{ form.password2 }}
     </div>
+
+    {% for error in form.password2.errors %}
+        <div class="text-danger">{{ error }}</div>
+    {% endfor %}
+    
     <div class="form-group">
         <label for="user_type">User Type</label>
         {{ form.user_type }}
@@ -67,4 +72,15 @@
     </div>
 
 </body>
+
+<script>
+    window.onload = function() {
+        if(typeof window.history.pushState == 'function') {
+            window.history.pushState({}, "Hide", '{{request.path}}');
+        }
+        window.onpopstate = function(){
+            window.location.reload();
+        }
+    }
+</script>
 </html>

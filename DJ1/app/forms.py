@@ -34,6 +34,16 @@ class UserRegistrationForm(UserCreationForm):
         if not re.search(r'[!@#$%^&*()_+{}|:"<>?]', password1):
             raise ValidationError('Password must contain at least one special character.')
         return password1
+    
+    def clean(self):
+        cleaned_data = super().clean()
+        password1 = cleaned_data.get('password1')
+        password2 = cleaned_data.get('password2')
+
+        if password1 and password2 and password1 != password2:
+            raise ValidationError("Passwords do not match.")
+
+        return cleaned_data
 
 
 User = get_user_model()
