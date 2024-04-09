@@ -52,7 +52,7 @@ def handleregistration(request):
             # Create a new CustomUser object and save it to the database
                 new_user = CustomUser.objects.create_user(username=username, password=password, user_type=user_type)
 
-                return redirect('login')  # Redirect to the login page after successful registration
+                return redirect('successful_register')  # Redirect to the login page after successful registration
         else:
             form = UserRegistrationForm()
         return render(request, 'registration.html', {'form': form})
@@ -68,3 +68,7 @@ def project_manager_home(request):
 def chief_editor_home(request):
     # Your logic for chief editor home page
     return render(request, 'chief_editor_home.html')
+
+def successful_register(request):
+    # Your logic for translator home page
+    return render(request, 'successful_register.html')

@@ -83,4 +83,27 @@
         }
     }
 </script>
+
+<script>
+    // Wait for the document to load
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get the password input and confirm password input elements
+        var passwordInput = document.getElementById('id_password1');
+        var confirmPasswordInput = document.getElementById('id_password2');
+        var confirmPasswordError = document.getElementById('confirmPasswordError');
+
+        // Add an event listener to the confirm password input
+        confirmPasswordInput.addEventListener('input', function () {
+            // Check if the passwords match
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                // Display the error message
+                confirmPasswordError.textContent = 'Passwords do not match.';
+                confirmPasswordError.style.color = 'red';  // Optional: Change the error message color
+            } else {
+                // Clear the error message if passwords match
+                confirmPasswordError.textContent = '';
+            }
+        });
+    });
+</script>
 </html>

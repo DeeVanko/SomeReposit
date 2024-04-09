@@ -11,5 +11,6 @@ urlpatterns = [
     path('translator/', views.translator_home, name='translator_home'),
     path('project-manager/', views.project_manager_home, name='project_manager_home'),
     path('chief-editor/', views.chief_editor_home, name='chief_editor_home'),
+    path('success/', views.successful_register, name='successful_register'),
     #path("login/registration/", views.registration, name='registration'),
 ]

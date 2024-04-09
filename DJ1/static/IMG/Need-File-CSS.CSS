@@ -54,7 +54,9 @@
 .form-group {
     margin-bottom: 20px;
 }
-
+.form-group-2 {
+    margin-bottom: 60px;
+}
 .form-group label {
     display: block;
     margin-bottom: 5px;
