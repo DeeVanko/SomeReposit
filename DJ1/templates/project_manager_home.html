@@ -74,8 +74,8 @@
                 </div>
                 <!-- User Name and Role -->
                 <div class="user-info">
-                    <div class="user-name"> John Doe</div>
-                    <div class="user-role">Project Manager</div>
+                    <div class="user-name">{{ request.user.username }}</div>
+                    <div class="user-role">{{ request.user.user_type }}</div>
                 </div>
             </div>
         </div>
