@@ -5,6 +5,11 @@ from .forms import CustomAuthenticationForm
 from .models import CustomUser
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
+from django.db import connection
+
+from django.http import JsonResponse
+
+
 
 def index(request):
     return render(request, 'index.html')
@@ -61,9 +66,7 @@ def translator_home(request):
     # Your logic for translator home page
     return render(request, 'translator_home.html')
 
-def project_manager_home(request):
-    # Your logic for project manager home page
-    return render(request, 'project_manager_home.html')
+
 
 def chief_editor_home(request):
     # Your logic for chief editor home page
@@ -72,3 +75,13 @@ def chief_editor_home(request):
 def successful_register(request):
     # Your logic for translator home page
     return render(request, 'successful_register.html')
+
+def project_manager(request):
+    # Retrieve all translators from the database
+    translators = CustomUser.objects.filter(user_type='translator')
+    
+    context = {
+        'translators': translators,
+    }
+    
+    return render(request, 'project_manager_home.html', context)

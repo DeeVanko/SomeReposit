@@ -1,11 +1,12 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+
 class CustomUser(AbstractUser):
     USER_TYPE_CHOICES = [
-        ('translator', 'Translator'),
-        ('project_manager', 'Project Manager'),
-        ('chief_editor', 'Chief Editor'),
+        ('translator', 'translator'),
+        ('project_manager', 'project_manager'),
+        ('chief_editor', 'chief_editor'),
     ]
 
     user_type = models.CharField(max_length=50, choices=USER_TYPE_CHOICES)
