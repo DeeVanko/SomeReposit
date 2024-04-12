@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from .forms import UserRegistrationForm
 from .forms import CustomAuthenticationForm
@@ -99,3 +99,14 @@ def project_manager(request):
         'translators': translators
     }
     return render(request, 'project_manager_home.html', context)
+
+def update_project(request, project_id):
+    project = get_object_or_404(Project, id=project_id)
+    if request.method == 'POST':
+        form = ProjectForm(request.POST, instance=project)
+        if form.is_valid():
+            form.save()
+            return redirect('project_manager_home')  # Replace with your actual home view
+    else:
+        form = ProjectForm(instance=project)
+    return render(request, 'edit_project.html', {'form': form})

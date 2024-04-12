@@ -12,4 +12,5 @@ urlpatterns = [
     path("project-manager/", views.project_manager, name='project_manager_home'),
     path("chief-editor/", views.chief_editor_home, name='chief_editor_home'),
     path("success/", views.successful_register, name='successful_register'),
+    path('project/update/<int:project_id>/', views.update_project, name='update_project'),
 ]
