@@ -46,16 +46,19 @@
 
             <!-- Project List -->
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <!-- Project 1 -->
-
-                        <li class="nav-item mb-3" onmouseover="this.style.backgroundColor='#333'" onmouseout="this.style.backgroundColor='transparent'">
-                            <div class="d-flex justify-content-between align-items-center project-wrapper" style="padding: 10px;">
-                                <div class="project-name" style="margin-right: 10px;">Project 1</div>
-                                <button type="button" class="btn btn-link edit-btn" data-bs-toggle="modal" data-bs-target="#editProjectModal1">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </button>
-                            </div>
-                        </li>
+                <!-- Loop through projects and display each one -->
+                {% for project in projects %}
+                <li class="nav-item mb-3" onmouseover="this.style.backgroundColor='#333'"
+                    onmouseout="this.style.backgroundColor='transparent'">
+                    <div class="d-flex justify-content-between align-items-center project-wrapper" style="padding: 10px;">
+                        <div class="project-name" style="margin-right: 10px;">{{ project.project_name }}</div>
+                        <button type="button" class="btn btn-link edit-btn"
+                            data-bs-toggle="modal" data-bs-target="#editProjectModal{{ project.id }}">
+                            <i class="fas fa-pencil-alt"></i>
+                        </button>
+                    </div>
+                </li>
+                {% endfor %}
             </ul>
         </div>
         <!-- Plus Sign Button Box -->

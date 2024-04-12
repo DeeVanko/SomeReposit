@@ -77,24 +77,25 @@ def successful_register(request):
     return render(request, 'successful_register.html')
 
 def project_manager(request):
-    # Retrieve all translators from the database
+    projects = Project.objects.all()  # Retrieve all projects
+    user = request.user  # Get the current user
     translators = CustomUser.objects.filter(user_type='translator')
-    
+
     if request.method == 'POST':
         form = ProjectForm(request.POST)
         if form.is_valid():
-            # Get the current user
-            current_user = request.user
-            # Create a new Project object with the current user as the selected_translator
+            # Save the project with the current user as the selected_translator
             project = form.save(commit=False)
-            project.selected_translator = current_user
+            project.selected_translator = user
             project.save()
             return redirect('project_manager_home')  # Redirect after successful form submission
     else:
         form = ProjectForm()
-    
+
     context = {
-        'translators': translators,
-        'form': form,  # Add the form to the context
+        'projects': projects,
+        'user': user,
+        'form': form,
+        'translators': translators
     }
     return render(request, 'project_manager_home.html', context)
