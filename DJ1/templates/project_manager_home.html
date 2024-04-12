@@ -94,20 +94,20 @@
                 <div class="modal-body">
                     <form method="post" action="{% url 'project_manager_home' %}">
                         {% csrf_token %}
-                <!-- Project Name Input -->
-                <div class="mb-3">
-                    <label for="projectName" class="form-label">Project Name</label>
-                    <input type="text" class="form-control" id="projectName" name="project_name">
-                </div>
-                <!-- Translator Input as Bootstrap Dropdown -->
-                <div class="mb-3">
-                    <label for="translator" class="form-label">Select Translator</label>
-                    <select class="form-select" id="translator" name="selected_translator">
-                        {% for translator in translators %}
-                            <option value="{{ translator.username }}">{{ translator.username }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
+                        <!-- Project Name Input -->
+                        <div class="mb-3">
+                            <label for="projectName" class="form-label">Project Name</label>
+                            <input type="text" class="form-control" id="projectName" name="project_name">
+                        </div>
+                        <!-- Translator Input as Bootstrap Dropdown -->
+                        <div class="mb-3">
+                            <label for="translator" class="form-label">Select Translator</label>
+                            <select class="form-select" id="translator" name="selected_translator">
+                                {% for translator in translators %}
+                                    <option value="{{ translator.pk }}">{{ translator.username }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
                         <!-- Deadline Input -->
                         <div class="mb-3">
                             <label for="deadline" class="form-label">Deadline</label>

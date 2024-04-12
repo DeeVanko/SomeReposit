@@ -5,6 +5,8 @@ from django.contrib.auth import authenticate, get_user_model
 from django.core.exceptions import ValidationError
 from .models import CustomUser
 import re
+from django import forms
+from .models import Project
 
 class UserRegistrationForm(UserCreationForm):
     USER_TYPE_CHOICES = [
@@ -62,4 +64,7 @@ class CustomAuthenticationForm(forms.Form):
         return cleaned_data
 
 
-
+class ProjectForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = ['project_name', 'selected_translator', 'deadline']

@@ -2,11 +2,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from .forms import UserRegistrationForm
 from .forms import CustomAuthenticationForm
-from .models import CustomUser
+from .models import CustomUser, Project
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.db import connection
-
+from .forms import ProjectForm
 from django.http import JsonResponse
 
 
@@ -80,8 +80,21 @@ def project_manager(request):
     # Retrieve all translators from the database
     translators = CustomUser.objects.filter(user_type='translator')
     
+    if request.method == 'POST':
+        form = ProjectForm(request.POST)
+        if form.is_valid():
+            # Get the current user
+            current_user = request.user
+            # Create a new Project object with the current user as the selected_translator
+            project = form.save(commit=False)
+            project.selected_translator = current_user
+            project.save()
+            return redirect('project_manager_home')  # Redirect after successful form submission
+    else:
+        form = ProjectForm()
+    
     context = {
         'translators': translators,
+        'form': form,  # Add the form to the context
     }
-    
     return render(request, 'project_manager_home.html', context)
