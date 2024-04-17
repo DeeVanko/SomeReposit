@@ -8,6 +8,8 @@ from django.contrib import messages
 from django.db import connection
 from .forms import ProjectForm
 from django.http import JsonResponse
+from .models import Project, CustomUser, Activity
+from .forms import ProjectForm, ActivityForm
 
 
 
@@ -77,18 +79,17 @@ def successful_register(request):
     return render(request, 'successful_register.html')
 
 def project_manager(request):
-    projects = Project.objects.all()  # Retrieve all projects
-    user = request.user  # Get the current user
+    projects = Project.objects.all()
+    user = request.user
     translators = CustomUser.objects.filter(user_type='translator')
 
     if request.method == 'POST':
         form = ProjectForm(request.POST)
         if form.is_valid():
-            # Save the project with the current user as the selected_translator
             project = form.save(commit=False)
             project.selected_translator = user
             project.save()
-            return redirect('project_manager_home')  # Redirect after successful form submission
+            return redirect('project_manager_home')  
     else:
         form = ProjectForm()
 
@@ -106,7 +107,28 @@ def update_project(request, project_id):
         form = ProjectForm(request.POST, instance=project)
         if form.is_valid():
             form.save()
-            return redirect('project_manager_home')  # Replace with your actual home view
+            return redirect('project_manager_home')
     else:
         form = ProjectForm(instance=project)
     return render(request, 'edit_project.html', {'form': form})
+
+def project_manager_detail(request, project_id):
+    project = get_object_or_404(Project, id=project_id)
+    activities = Activity.objects.filter(project=project)
+
+    if request.method == 'POST':
+        form = ActivityForm(request.POST)
+        if form.is_valid():
+            activity = form.save(commit=False)
+            activity.project = project
+            activity.save()
+            return redirect('project_manager_detail', project_id=project_id)
+    else:
+        form = ActivityForm()
+
+    context = {
+        'project': project,
+        'activities': activities,
+        'form': form,
+    }
+    return render(request, 'project_manager_detail.html', context)

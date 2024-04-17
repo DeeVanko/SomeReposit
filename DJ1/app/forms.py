@@ -7,6 +7,7 @@ from .models import CustomUser
 import re
 from django import forms
 from .models import Project
+from .models import Activity
 
 class UserRegistrationForm(UserCreationForm):
     USER_TYPE_CHOICES = [
@@ -67,4 +68,9 @@ class CustomAuthenticationForm(forms.Form):
 class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
-        fields = ['project_name', 'selected_translator', 'deadline']
+        fields = ['project_name', 'deadline']
+
+class ActivityForm(forms.ModelForm):
+    class Meta:
+        model = Activity
+        fields = ['name']

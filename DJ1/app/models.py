@@ -2,6 +2,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
+
 class CustomUser(AbstractUser):
     USER_TYPE_CHOICES = [
         ('translator', 'translator'),
@@ -17,8 +18,15 @@ class CustomUser(AbstractUser):
 
 class Project(models.Model):
     project_name = models.CharField(max_length=255)
-    selected_translator = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    selected_translator = models.ForeignKey(CustomUser, on_delete=models.CASCADE, null=True, blank=True)
     deadline = models.DateField()
 
     def __str__(self):
         return self.project_name
+
+class Activity(models.Model):
+    name = models.CharField(max_length=100)
+    project = models.ForeignKey('Project', related_name='activities', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name

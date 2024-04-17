@@ -30,9 +30,6 @@
         </div>
     </nav>
 
-   
-
-
     <!-- Ссылочное меню ссылочной кнопки-->
     <div class="offcanvas offcanvas-start text-bg-dark" data-bs-scroll="true" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
         <!-- Head меню -->
@@ -42,27 +39,23 @@
         </div>
         <!-- Body меню -->
         <div class="offcanvas-body">
-            
-
             <!-- Project List -->
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <!-- Loop through projects and display each one -->
                 {% for project in projects %}
-                <li class="nav-item mb-3" onmouseover="this.style.backgroundColor='#333'"
-                    onmouseout="this.style.backgroundColor='transparent'">
-                    <div class="d-flex justify-content-between align-items-center project-wrapper" style="padding: 10px;">
-                        <div class="project-name" style="margin-right: 10px;">{{ project.project_name }}</div>
-                        <button type="button" class="btn btn-link edit-btn"
-                            data-bs-toggle="modal" data-bs-target="#editProjectModal{{ project.id }}">
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
-                    </div>
+                <li class="nav-item mb-3" onmouseover="this.style.backgroundColor='#333'" onmouseout="this.style.backgroundColor='transparent'">
+                    <a href="{% url 'project_manager_detail' project_id=project.id %}">
+                        <div class="d-flex justify-content-between align-items-center project-wrapper" style="padding: 10px;">
+                            <div class="project-name" style="margin-right: 10px;">{{ project.project_name }}</div>
+                            <button type="button" class="btn btn-link edit-btn" data-bs-toggle="modal" data-bs-target="#editProjectModal{{ project.id }}">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                        </div>
+                    </a>
                 </li>
                 {% endfor %}
             </ul>
         </div>
-
-        
 
         <!-- Plus Sign Button Box -->
         <div class="plus-button-box d-flex justify-content-center align-items-center" style="padding: 10px; background-color: #212529; color: white;">
@@ -106,14 +99,7 @@
                             <input type="text" class="form-control" id="projectName{{ project.id }}" name="project_name" value="{{ project.project_name }}">
                         </div>
                          <!-- Translator Input as Bootstrap Dropdown -->
-                         <div class="mb-3">
-                            <label for="translator" class="form-label">Select Translator</label>
-                            <select class="form-select" id="translator" name="selected_translator">
-                                {% for translator in translators %}
-                                    <option value="{{ translator.pk }}">{{ translator.username }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
+                         
                         <!-- Deadline Input -->
                         <div class="mb-3">
                             <label for="deadline" class="form-label">Deadline</label>
@@ -145,14 +131,7 @@
                             <input type="text" class="form-control" id="projectName" name="project_name">
                         </div>
                         <!-- Translator Input as Bootstrap Dropdown -->
-                        <div class="mb-3">
-                            <label for="translator" class="form-label">Select Translator</label>
-                            <select class="form-select" id="translator" name="selected_translator">
-                                {% for translator in translators %}
-                                    <option value="{{ translator.pk }}">{{ translator.username }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
+                        
                         <!-- Deadline Input -->
                         <div class="mb-3">
                             <label for="deadline" class="form-label">Deadline</label>
