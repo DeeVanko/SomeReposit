@@ -17,8 +17,9 @@ class CustomUser(AbstractUser):
 
 class Project(models.Model):
     project_name = models.CharField(max_length=255)
-    selected_translator = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     deadline = models.DateField()
+    status = models.CharField(max_length=20, default='Not completed', editable=False)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.project_name

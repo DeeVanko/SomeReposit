@@ -77,16 +77,14 @@ def successful_register(request):
     return render(request, 'successful_register.html')
 
 def project_manager(request):
-    projects = Project.objects.all()  # Retrieve all projects
+    projects = Project.objects.all().order_by('-created_at')  # Retrieve all projects
     user = request.user  # Get the current user
-    translators = CustomUser.objects.filter(user_type='translator')
 
     if request.method == 'POST':
         form = ProjectForm(request.POST)
         if form.is_valid():
             # Save the project with the current user as the selected_translator
             project = form.save(commit=False)
-            project.selected_translator = user
             project.save()
             return redirect('project_manager_home')  # Redirect after successful form submission
     else:
@@ -96,7 +94,6 @@ def project_manager(request):
         'projects': projects,
         'user': user,
         'form': form,
-        'translators': translators
     }
     return render(request, 'project_manager_home.html', context)
 

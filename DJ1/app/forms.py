@@ -67,4 +67,4 @@ class CustomAuthenticationForm(forms.Form):
 class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
-        fields = ['project_name', 'selected_translator', 'deadline']
+        fields = ['project_name', 'deadline']
