@@ -18,15 +18,15 @@
     <nav class="navbar navbar-dark bg-dark fixed-top">      
         <!-- Контейнер с полным охватом -->
         <div class="container-fluid">
-            <!-- Ссылочное лого -->
-            <a class="navbar-brand" href="#">
-                <img src="{% static 'IMG/error.jpg' %}" alt="Logo" width="40" height="30" class="d-inline-block align-text-top">
-                CORP
-            </a>
             <!-- Кнопка для открытия модального окна -->
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- Ссылочное лого -->
+            <a class="navbar-brand" href="/project-manager">
+                <img src="{% static 'IMG/Atom_icon.png' %}" id="Logo" alt="Logo" width="95" height="20" class="d-inline-block" style="margin-bottom: 7px">
+            </a>
+            
         </div>
     </nav>
 
@@ -51,7 +51,9 @@
     <div class="offcanvas offcanvas-start text-bg-dark" data-bs-scroll="true" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
         <!-- Head меню -->
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">TEXT-O-MATIC</h5>
+            <a class="navbar-brand" href="/project-manager">
+                <img src="{% static 'IMG/Atom_icon.png' %}" id="Logo" alt="Logo" width="95" height="20" class="d-inline-block" >
+            </a>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
 
@@ -59,24 +61,35 @@
         <!-- Body меню -->
         <div class="offcanvas-body">
             
-
+            
             <!-- Project List -->
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <!-- Loop through projects and display each one -->
-                {% for project in projects %}
-                <li class="nav-item mb-3" onmouseover="this.style.backgroundColor='#333' data-project-id="{{ project.id }}"
-                data-project-deadline="{{ project.deadline }}"
-                data-project-status="{{ project.status }}""
-                    onmouseout="this.style.backgroundColor='transparent'">
-                    <div class="d-flex justify-content-between align-items-center project-wrapper" style="padding: 10px;">
-                        <div class="project-name" style="margin-right: 10px;">{{ project.project_name }}</div>
-                        <button type="button" class="btn btn-link edit-btn"
-                            data-bs-toggle="modal" data-bs-target="#editProjectModal{{ project.id }}">
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
+                
+                <p class="d-inline-flex gap-1">
+                    
+                    <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        My Projects
+                    </button>
+                  </p>
+                  <div class="collapse" id="collapseExample">
+                    <div class="card text-bg-dark mb-3 border-secondary mb-3 card-body">
+                        {% for project in projects %}
+                        <li class="nav-item mb-3" onmouseover="this.style.backgroundColor='#333' data-project-id="{{ project.id }}"
+                        data-project-deadline="{{ project.deadline }}"
+                        data-project-status="{{ project.status }}""
+                            onmouseout="this.style.backgroundColor='transparent'">
+                            <div class="d-flex justify-content-between align-items-center project-wrapper" style="padding: 10px;">
+                                <div class="project-name" style="margin-right: 10px;">{{ project.project_name }}</div>
+                                <button type="button" class="btn btn-link edit-btn"
+                                    data-bs-toggle="modal" data-bs-target="#editProjectModal{{ project.id }}">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </button>
+                            </div>
+                        </li>
+                        {% endfor %}
                     </div>
-                </li>
-                {% endfor %}
+                  </div>
+                
             </ul>
         </div>
 
@@ -94,7 +107,7 @@
             <div class="d-flex align-items-center">
                 <!-- User Icon -->
                 <div class="user-icon" style="margin-right: 10px;">
-                    <img src="{% static 'IMG/error.jpg' %}" alt="User Icon" width="50" height="50" style="border-radius: 50%;">
+                    <img src="{% static 'IMG/Atom_user_icon.png' %}" alt="User Icon" width="50" height="50" style="border-radius: 50%;">
                 </div>
                 <!-- User Name and Role -->
                 <div class="user-info">
@@ -210,6 +223,10 @@
 
 
 <style>
+    #Logo{
+        justify-content: center;
+    }
+
     #projectDetailsCanvas {
         height: 100%; /* Adjust the height as needed */
     }
