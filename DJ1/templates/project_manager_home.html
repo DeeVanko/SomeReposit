@@ -9,6 +9,9 @@
     <!-- Подключаем файлы JavaScript для некоторых компонентов и интерактивности -->
     <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
     <title>GIT GUD</title>
 </head>
@@ -31,18 +34,18 @@
     </nav>
 
     <div class="container mt-5 pt-5">
-        <h2 id="selectedProjectName">Select a project</h2>
+        <h2 id="selectedProjectName" style="font-family: Roboto">Select a project</h2>
     </div>
     
     <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="projectDetailsCanvas" aria-labelledby="projectDetailsLabel" style="left: 21%">
         <div class="offcanvas-header">
-            <h5 id="projectDetailsLabel" class="offcanvas-title">Project Details</h5>
+            <h5 id="projectDetailsLabel" class="offcanvas-title" style="font-family: Roboto">Project Details</h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         
         <div class="offcanvas-body">
-            <p id="projectDeadline">Deadline: {{ project.deadline }}</p>
-            <p id="projectStatus">Status: {{ project.status }}</p>
+            <p id="projectDeadline" style="font-family: Roboto">Deadline: {{ project.deadline }}</p>
+            <p id="projectStatus" style="font-family: Roboto">Status: {{ project.status }}</p>
         </div>
         
     </div>
@@ -52,7 +55,7 @@
         <!-- Head меню -->
         <div class="offcanvas-header">
             <a class="navbar-brand" href="/project-manager">
-                <img src="{% static 'IMG/Atom_icon.png' %}" id="Logo" alt="Logo" width="95" height="20" class="d-inline-block" >
+                <img src="{% static 'IMG/Atom_icon.png' %}" id="Logo" alt="Logo" width="95" height="20" class="d-inline-block" style="margin-left: 7px">
             </a>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
@@ -67,7 +70,7 @@
                 
                 <p class="d-inline-flex gap-1">
                     
-                    <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="font-family: Roboto">
                         My Projects
                     </button>
                   </p>
@@ -79,7 +82,7 @@
                         data-project-status="{{ project.status }}""
                             onmouseout="this.style.backgroundColor='transparent'">
                             <div class="d-flex justify-content-between align-items-center project-wrapper" style="padding: 10px;">
-                                <div class="project-name" style="margin-right: 10px;">{{ project.project_name }}</div>
+                                <div class="project-name" style="margin-right: 10px;" style="font-family: Roboto">{{ project.project_name }}</div>
                                 <button type="button" class="btn btn-link edit-btn"
                                     data-bs-toggle="modal" data-bs-target="#editProjectModal{{ project.id }}">
                                     <i class="fas fa-pencil-alt"></i>
@@ -111,8 +114,8 @@
                 </div>
                 <!-- User Name and Role -->
                 <div class="user-info">
-                    <div class="user-name">{{ request.user.username }}</div>
-                    <div class="user-role">{{ request.user.user_type }}</div>
+                    <div class="user-name" style="font-family: Roboto">{{ request.user.username }}</div>
+                    <div class="user-role" style="font-family: Roboto">{{ request.user.user_type }}</div>
                 </div>
             </div>
         </div>
@@ -133,15 +136,15 @@
                     <form method="post" action="{% url 'update_project' project.id %}">
                         {% csrf_token %}
                         <div class="mb-3">
-                            <label for="projectName{{ project.id }}" class="form-label">Project Name</label>
-                            <input type="text" class="form-control" id="projectName{{ project.id }}" name="project_name" value="{{ project.project_name }}">
+                            <label for="projectName{{ project.id }}" class="form-label" style="font-family: Roboto">Project Name</label>
+                            <input type="text" class="form-control" id="projectName{{ project.id }}" name="project_name" value="{{ project.project_name }}" style="font-family: Roboto">
                         </div>
                         <!-- Deadline Input -->
                         <div class="mb-3">
-                            <label for="deadline" class="form-label">Deadline</label>
-                            <input type="date" class="form-control" id="deadline" name="deadline">
+                            <label for="deadline" class="form-label" style="font-family: Roboto">Deadline</label>
+                            <input type="date" class="form-control" id="deadline" name="deadline" style="font-family: Roboto">
                         </div>
-                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <button type="submit" class="btn btn-primary" style="font-family: Roboto">Save Changes</button>
                     </form>
                 </div>
             </div>
@@ -154,7 +157,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="projectManagerOffcanvasLabel">Create Project</h5>
+                    <h5 class="modal-title" id="projectManagerOffcanvasLabel" style="font-family: Roboto">Create Project</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <!-- Modal Body -->
@@ -163,18 +166,18 @@
                         {% csrf_token %}
                         <!-- Project Name Input -->
                         <div class="mb-3">
-                            <label for="projectName" class="form-label">Project Name</label>
-                            <input type="text" class="form-control" id="projectName" name="project_name">
+                            <label for="projectName" class="form-label" style="font-family: Roboto">Project Name</label>
+                            <input type="text" class="form-control" id="projectName" name="project_name" style="font-family: Roboto">
                         </div>
                         <!-- Translator Input as Bootstrap Dropdown -->
                         
                         <!-- Deadline Input -->
                         <div class="mb-3">
-                            <label for="deadline" class="form-label">Deadline</label>
-                            <input type="date" class="form-control" id="deadline" name="deadline">
+                            <label for="deadline" class="form-label" style="font-family: Roboto">Deadline</label>
+                            <input type="date" class="form-control" id="deadline" name="deadline" style="font-family: Roboto">
                         </div>
                         <!-- Submit Button -->
-                        <button type="submit" class="btn btn-primary">Create Project</button>
+                        <button type="submit" class="btn btn-primary" style="font-family: Roboto">Create Project</button>
                     </form>
                 </div>
             </div>
