@@ -79,6 +79,7 @@ def successful_register(request):
 def project_manager(request):
     projects = Project.objects.all().order_by('-created_at')  # Retrieve all projects
     user = request.user  # Get the current user
+    translators = CustomUser.objects.filter(user_type='translator')
 
     if request.method == 'POST':
         form = ProjectForm(request.POST)
@@ -94,6 +95,7 @@ def project_manager(request):
         'projects': projects,
         'user': user,
         'form': form,
+        'translators': translators,
     }
     return render(request, 'project_manager_home.html', context)
 
