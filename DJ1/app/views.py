@@ -2,11 +2,11 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from .forms import UserRegistrationForm
 from .forms import CustomAuthenticationForm
-from .models import CustomUser, Project
+from .models import CustomUser, Project, Activity
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.db import connection
-from .forms import ProjectForm
+from .forms import ProjectForm, ActivityForm
 from django.http import JsonResponse
 
 
@@ -86,6 +86,7 @@ def project_manager(request):
         if form.is_valid():
             # Save the project with the current user as the selected_translator
             project = form.save(commit=False)
+            
             project.save()
             return redirect('project_manager_home')  # Redirect after successful form submission
     else:
@@ -109,3 +110,25 @@ def update_project(request, project_id):
     else:
         form = ProjectForm(instance=project)
     return render(request, 'edit_project.html', {'form': form})
+
+def create_activity(request):
+    projects = Project.objects.all()  # Fetch all projects for the dropdown
+    translators = CustomUser.objects.filter(user_type='translator')  # Assuming CustomUser is your user model with a 'user_type' field
+
+    if request.method == 'POST':
+        form = ActivityForm(request.POST)
+        print(request.POST)
+        if form.is_valid():
+            
+            activity = form.save(commit=False)
+            activity.remaining_text_volume = "0%"
+            activity.status = "Not Completed"
+            activity.save()
+            
+            return redirect('project_manager_home')  # Redirect to a home or appropriate page
+        else:
+            print(form.is_valid())
+    else:
+        form = ActivityForm()
+
+    return render(request, 'project_manager_home.html', {'form': form, 'projects': projects, 'translators': translators})

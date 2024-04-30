@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
 from .models import CustomUser
 import re
 from django import forms
-from .models import Project
+from .models import Project, Activity
 
 class UserRegistrationForm(UserCreationForm):
     USER_TYPE_CHOICES = [
@@ -68,3 +68,8 @@ class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
         fields = ['project_name', 'deadline']
+
+class ActivityForm(forms.ModelForm):
+    class Meta:
+        model = Activity
+        fields = ['activity_name', 'translator','project','deadline']

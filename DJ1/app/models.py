@@ -23,3 +23,14 @@ class Project(models.Model):
 
     def __str__(self):
         return self.project_name
+
+class Activity(models.Model):
+    activity_name = models.CharField(max_length=255)
+    translator = models.CharField(max_length=255)
+    deadline = models.DateField()
+    remaining_text_volume = models.CharField(max_length=100, default="0%")
+    status = models.CharField(max_length=100, default="Not Completed")
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="activities")
+
+    def __str__(self):
+        return self.activity_name
