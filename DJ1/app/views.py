@@ -80,6 +80,7 @@ def project_manager(request):
     projects = Project.objects.all().order_by('-created_at')  # Retrieve all projects
     user = request.user  # Get the current user
     translators = CustomUser.objects.filter(user_type='translator')
+    activities = Activity.objects.all()  # Retrieve all activities
 
     if request.method == 'POST':
         form = ProjectForm(request.POST)
@@ -97,8 +98,10 @@ def project_manager(request):
         'user': user,
         'form': form,
         'translators': translators,
+        'activities': activities,  # Pass activities to the template context
     }
     return render(request, 'project_manager_home.html', context)
+
 
 def update_project(request, project_id):
     project = get_object_or_404(Project, id=project_id)

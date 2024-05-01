@@ -47,13 +47,31 @@
         </div>
     
         <!-- Other Cards -->
-        <div class="card text-bg-success mb-3" style="flex: 0 0 18%; margin: 1%;" data-bs-toggle="modal" data-bs-target="#createActivityModal">
-            <div class="card-header">Not Completed</div>
-            <div class="card-body">
-                <h5 class="card-title">Project For Software</h5>
-                <p class="card-text">Deadline: 19.04.24</p>
+        {% for activity in activities %}
+    <div class="card text-bg-success mb-3" style="flex: 0 0 18%; margin: 1%;" data-bs-toggle="modal" data-bs-target="#activityModal{{ activity.id }}">
+        <div class="card-header">{{ activity.status }}</div>
+        <div class="card-body">
+            <h5 class="card-title">{{ activity.activity_name }}</h5>
+            <p class="card-text">Deadline: {{ activity.deadline }}</p>
+        </div>
+    </div>
+
+    <!-- Activity Modal -->
+    <div class="modal fade" id="activityModal{{ activity.id }}" tabindex="-1" aria-labelledby="activityModalLabel{{ activity.id }}" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="activityModalLabel{{ activity.id }}">{{ activity.activity_name }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Activity details here...</p>
+                    <!-- You can add more details about the activity inside this modal body -->
+                </div>
             </div>
         </div>
+    </div>
+{% endfor %}
         <!-- Repeat similar blocks for other cards -->
     </div>
     
