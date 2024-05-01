@@ -37,13 +37,24 @@
         <h2 id="selectedProjectName" style="font-family: Roboto">Select a project</h2>
     </div>
     
-       
-    <div class="card text-bg-dark d-flex justify-content-center align-items-center" style="max-width: 18rem; cursor: pointer; height: 140px;" data-bs-toggle="modal" data-bs-target="#createActivityModal">
-        <!-- Button styled as an icon, now centered -->
-        <div class="btn btn-primary btn-circle btn-lg" style="border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-            <i class="fas fa-plus"></i>
+    <div class="cards-container">
+        <!-- Create Activity Card -->
+        <div class="card text-bg-dark d-flex justify-content-center align-items-center" style="flex: 0 0 18%; margin: 1%;" data-bs-toggle="modal" data-bs-target="#createActivityModal">
+            <div class="btn btn-primary btn-circle btn-lg" style="border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-plus"></i>
+            </div>
+            <p class="card-text" style="font-family: Roboto; text-align: center;">Create New Activity</p>
         </div>
-        <p class="card-text mt-2" style="font-family: Roboto; text-align: center;">Create New Activity</p>
+    
+        <!-- Other Cards -->
+        <div class="card text-bg-success mb-3" style="flex: 0 0 18%; margin: 1%;" data-bs-toggle="modal" data-bs-target="#createActivityModal">
+            <div class="card-header">Not Completed</div>
+            <div class="card-body">
+                <h5 class="card-title">Project For Software</h5>
+                <p class="card-text">Deadline: 19.04.24</p>
+            </div>
+        </div>
+        <!-- Repeat similar blocks for other cards -->
     </div>
     
    
@@ -279,6 +290,24 @@
 </body>
 </html>
 
+<style>
+    .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start; /* Aligns items to the start of the container */
+    }
+    
+    .cards-container .card {
+        flex: 0 0 18%; /* Flex-grow, flex-shrink, and flex-basis set for 5 items per row */
+        margin: 1%; /* Adds space around the cards */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 140px;
+        cursor: pointer;
+    }
+    </style>
 
 <style>
     #Logo{
