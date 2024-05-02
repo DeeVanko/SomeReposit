@@ -114,6 +114,19 @@ def update_project(request, project_id):
         form = ProjectForm(instance=project)
     return render(request, 'edit_project.html', {'form': form})
 
+def update_activity(request, activity_id):
+    if request.method == 'POST':
+        activity = get_object_or_404(Activity, pk=activity_id)
+        activity.activity_name = request.POST.get('activity_name', activity.activity_name)
+        activity.translator = request.POST.get('translator', activity.translator)
+        activity.project_id = request.POST.get('project_id', activity.project_id)
+        activity.deadline = request.POST.get('deadline', activity.deadline)
+        activity.save()
+        messages.success(request, 'Activity updated successfully!')
+        return redirect('project_manager_home')  # Redirect to a specific view after updating
+    else:
+        return render(request, 'edit_project.html')
+
 def create_activity(request):
     projects = Project.objects.all()  # Fetch all projects for the dropdown
     translators = CustomUser.objects.filter(user_type='translator')  # Assuming CustomUser is your user model with a 'user_type' field

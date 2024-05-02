@@ -65,8 +65,35 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Activity details here...</p>
-                    <!-- You can add more details about the activity inside this modal body -->
+                    <!-- Activity details form -->
+                    <form id="editActivityForm{{ activity.id }}" method="post" action="{% url 'update_activity' activity.id %}">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="activityName{{ activity.id }}" class="form-label">Activity Name</label>
+                            <input type="text" class="form-control" id="activityName{{ activity.id }}" name="activity_name" value="{{ activity.activity_name }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="translator{{ activity.id }}" class="form-label">Translator</label>
+                            <select class="form-select" id="translator{{ activity.id }}" name="translator">
+                                {% for translator in translators %}
+                                <option value="{{ translator.username }}">{{ translator.username }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="project{{ activity.id }}" class="form-label">Project</label>
+                            <select class="form-select" id="project{{ activity.id }}" name="project_id">
+                                {% for project in projects %}
+                                <option value="{{ project.id }}">{{ project.project_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="deadline{{ activity.id }}" class="form-label">Deadline</label>
+                            <input type="date" class="form-control" id="deadline{{ activity.id }}" name="deadline" value="{{ activity.deadline }}">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -332,6 +359,25 @@
             });
         });
         
+    </script>
+
+    <script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const activityModals = document.querySelectorAll('.modal');
+        
+                activityModals.forEach(modal => {
+                    modal.addEventListener('show.bs.modal', function (event) {
+                        const button = event.relatedTarget;
+                        const activityId = button.getAttribute('data-activity-id');
+        
+                        // Update the form action to include the activity ID
+                        const form = modal.querySelector(`#editActivityForm${activityId}`);
+                        form.action = `/update_activity/${activityId}`;
+                    });
+                });
+            });
+        </script>
     </script>
 </body>
 </html>

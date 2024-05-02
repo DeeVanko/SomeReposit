@@ -14,4 +14,5 @@ urlpatterns = [
     path("success/", views.successful_register, name='successful_register'),
     path('project/update/<int:project_id>/', views.update_project, name='update_project'),
     path("project-manager-check/", views.create_activity, name='project_manager_check'),
+     path('update_activity/<int:activity_id>/', views.update_activity, name='update_activity'),
 ]
