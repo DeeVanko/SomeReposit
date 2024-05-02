@@ -48,7 +48,7 @@
     
         <!-- Other Cards -->
         {% for activity in activities %}
-    <div class="card text-bg-success mb-3" style="flex: 0 0 18%; margin: 1%;" data-bs-toggle="modal" data-bs-target="#activityModal{{ activity.id }}">
+    <div class="card text-bg-danger mb-3" style="flex: 0 0 18%; margin: 1%;" data-bs-toggle="modal" data-bs-target="#activityModal{{ activity.id }}" data-project-id="{{ activity.project_id }}">
         <div class="card-header">{{ activity.status }}</div>
         <div class="card-body">
             <h5 class="card-title">{{ activity.activity_name }}</h5>
@@ -116,7 +116,7 @@
                   <div class="collapse" id="collapseExample">
                     <div class="card text-bg-dark mb-3 border-secondary mb-3 card-body">
                         {% for project in projects %}
-                        <li class="nav-item mb-3" onmouseover="this.style.backgroundColor='#333' data-project-id="{{ project.id }}"
+                        <li class="nav-item mb-3" data-project-id="{{ project.id }}" onmouseover="this.style.backgroundColor='#333' data-project-id="{{ project.id }}"
                         data-project-deadline="{{ project.deadline }}"
                         data-project-status="{{ project.status }}""
                             onmouseout="this.style.backgroundColor='transparent'">
@@ -303,6 +303,34 @@
             });
         });
         
+        
+    </script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select all project items and activity cards
+            const projectItems = document.querySelectorAll(".nav-item");
+            const activityCards = document.querySelectorAll(".cards-container .card");
+    
+            // Attach event listeners to each project item
+            projectItems.forEach(item => {
+                item.addEventListener("click", function (event) {
+                    event.preventDefault(); // Prevent default action (e.g., anchor click)
+    
+                    // Retrieve the project ID from the clicked item
+                    const projectId = this.getAttribute('data-project-id');
+    
+                    // Filter activity cards based on the project ID
+                    activityCards.forEach(card => {
+                        if (card.getAttribute('data-project-id') === projectId) {
+                            card.style.display = 'flex'; // Show card if IDs match
+                        } else {
+                            card.style.display = 'none'; // Otherwise, hide card
+                        }
+                    });
+                });
+            });
+        });
         
     </script>
 </body>
