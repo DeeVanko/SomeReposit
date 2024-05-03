@@ -35,7 +35,7 @@
     </nav>
 
     <div class="container mt-5 pt-5">
-        <h4 id="selectedProjectName" style="font-family: Jost">Select a project to filter activities</h4>
+        <h4 id="selectedProjectName" style="font-family: Jost">ATOM - All projects</h4>
     </div>
     
     <div class="cards-container">
@@ -150,7 +150,7 @@
                   <div class="collapse" id="collapseExample">
                     <div class="card text-bg-dark mb-3 border-secondary mb-3 card-body">
                         {% for project in projects %}
-                        <li class="nav-item mb-3" data-project-id="{{ project.id }}" onmouseover="this.style.backgroundColor='#333' data-project-id="{{ project.id }}"
+                        <li class="nav-item mb-3" data-project-name="{{ project.project_name }}" data-project-id="{{ project.id }}" onmouseover="this.style.backgroundColor='#333' 
                         data-project-deadline="{{ project.deadline }}"
                         data-project-status="{{ project.status }}""
                             onmouseout="this.style.backgroundColor='transparent'">
@@ -307,38 +307,20 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const projectItems = document.querySelectorAll(".nav-item");
-            const projectDetailsCanvas = new bootstrap.Offcanvas(document.getElementById('projectDetailsCanvas'));
-        
+            // Получаем элемент с id selectedProjectName
+            const selectedProjectName = document.getElementById("selectedProjectName");
             projectItems.forEach(item => {
                 item.addEventListener("click", function () {
-                    // Remove selected-project class from all other items
-                    projectItems.forEach(otherItem => {
-                        otherItem.classList.remove('selected-project');
-                    });
-        
-                    // Add selected-project class to the clicked item
-                    this.classList.add('selected-project');
-        
-                    const projectName = this.querySelector(".project-name").textContent;
-                    const projectDeadline = this.getAttribute('data-project-deadline');
-                    const projectStatus = this.getAttribute('data-project-status');
-        
-                    // Update selected project display
-                    document.getElementById("selectedProjectName").textContent = projectName;
-        
-                    // Update project details offcanvas
-                    document.getElementById("projectDetailsLabel").textContent = projectName;
-                    document.getElementById("projectDeadline").textContent = 'Deadline: ' + projectDeadline;
-                    document.getElementById("projectStatus").textContent = 'Status: ' + projectStatus;
-        
-                    // Show the project details offcanvas
-                    projectDetailsCanvas.show();
+                    // Получаем значение атрибута data-project-id выбранного элемента
+                    const projectId = "ATOM - My projects - " + this.getAttribute("data-project-name");
+                    // Устанавливаем текстовое содержимое элемента с id selectedProjectName в значение project.id
+                    selectedProjectName.textContent = projectId;
                 });
             });
         });
-        
-        
     </script>
+
+    
     
     <script>
         document.addEventListener("DOMContentLoaded", function () {

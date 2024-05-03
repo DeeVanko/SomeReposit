@@ -25,6 +25,7 @@ class Project(models.Model):
         return self.project_name
 
 class Activity(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
     activity_name = models.CharField(max_length=255)
     translator = models.CharField(max_length=255)
     deadline = models.DateField()
